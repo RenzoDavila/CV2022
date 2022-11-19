@@ -3,6 +3,9 @@ This project use:
 - bootstrap@5.1.3
 - @popperjs/core@2.10.2
 
+Add in angular.json
+- "styles": ["node_modules/bootstrap/dist/css/bootstrap.min.css",]
+- "scripts": ["node_modules/bootstrap/dist/css/bootstrap.min.js"]
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
