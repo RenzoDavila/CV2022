@@ -1,22 +1,17 @@
-<div class="container-fluid">
-  <h1 class="mt-4">Simple Sidebar</h1>
-  <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-  <p>
-      Make sure to keep all page content within the
-      <code>#page-content-wrapper</code>
-      . The top navbar is optional, and just for demonstration. Just create an element with the
-      <code>#sidebarToggle</code>
-      ID which will toggle the menu when clicked.
-  </p>
-</div>
-<div class="footer">
-  <div class="floor fixed-bottom">
-    <img alt="floor" class="" src="assets/icon/main/floor.png" height="100%" width="100%">
+<app-navbar></app-navbar>
+<div class="row pt-5 content w-100 h-100 border-0 m-0">
+  <div class="col-md-4 bg-dark text-center text-white themed-grid-col sidebar d-none d-md-block d-print-block">
+    <app-sidebar></app-sidebar>
   </div>
-  <div class="desk fixed-bottom">
-    <img class="" src="assets/img/desk.svg" height="100%" width="100%">
+  <div class="col-0 col-md-4"></div>
+  <div class="col-12 col-md-8 pt-3 px-0 text-center themed-grid-col h-100 d-md-none">
+    <p>akdsjfasjdf</p>
+    <p>akdsjfasjdf</p>
+    <p>akdsjfasjdf</p>
+    <p>akdsjfasjdf</p>
+    <p>akdsjfasjdf</p>\
   </div>
-  <div class="me fixed-bottom">
-    <img class="" src="assets/img/me.svg" height="100%" width="100%">
+  <div class="col-12 col-md-8 pt-3 px-0 text-center themed-grid-col h-100" style="background-color: #20375B">
+    <app-pixel ></app-pixel>
   </div>
 </div>
