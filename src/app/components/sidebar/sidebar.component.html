@@ -5,10 +5,28 @@
         <img alt="enterprise" src="assets/icon/enterprises/nttdata.png" height="16">
       </a>
     </li>
-    <li>
+    <li *ngIf="(selectedPage$ | async)?.page == 'logo'">
       <a href="#" class="nav-link text-white">
         <img alt="enterprise" src="assets/icon/enterprises/enterprise.svg" width="16" height="16">
-        Dashboard
+        logo
+      </a>
+    </li>
+    <li *ngIf="(selectedPage$ | async)?.page == 'experience'">
+      <a href="#" class="nav-link text-white">
+        <img alt="enterprise" src="assets/icon/enterprises/enterprise.svg" width="16" height="16">
+        experience
+      </a>
+    </li>
+    <li *ngIf="(selectedPage$ | async)?.page == 'projects'">
+      <a href="#" class="nav-link text-white">
+        <img alt="enterprise" src="assets/icon/enterprises/enterprise.svg" width="16" height="16">
+        projects
+      </a>
+    </li>
+    <li *ngIf="(selectedPage$ | async)?.page == 'studies'">
+      <a href="#" class="nav-link text-white">
+        <img alt="enterprise" src="assets/icon/enterprises/enterprise.svg" width="16" height="16">
+        studies
       </a>
     </li>
     <li class="list-unstyled">

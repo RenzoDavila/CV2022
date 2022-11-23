@@ -7,7 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ContentComponent } from './components/content/content.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { PixelComponent } from './components/pixel/pixel.component';
-import { LogoComponent } from './components/logo/logo.component';
+import { SubMenuComponent } from './components/sub-menu/sub-menu.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { LogoComponent } from './components/logo/logo.component';
     ContentComponent,
     SidebarComponent,
     PixelComponent,
-    LogoComponent
+    SubMenuComponent
   ],
   imports: [
     BrowserModule,

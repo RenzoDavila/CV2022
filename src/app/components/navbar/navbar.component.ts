@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { InitPage } from 'src/app/models/InitPage.model';
+import { ObservableService } from 'src/app/services/observable/observable.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.sass']
 })
 export class NavbarComponent implements OnInit {
+  selectedPage: InitPage = {
+    page: 'logo'
+  };
 
-  constructor() { }
+  constructor(private observableService: ObservableService) {}
 
   ngOnInit(): void {
+    this.observableService.selectedPage$.subscribe((page:InitPage) => this.selectedPage = page)
+  }
+
+  changeSelected(page: string){
+    let tempSelectedPage : InitPage = {
+      page: page
+    };
+    // this.selectedPage.page = page;
+    this.observableService.setPage(tempSelectedPage)
   }
 
 }
