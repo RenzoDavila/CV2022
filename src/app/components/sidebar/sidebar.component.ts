@@ -1,5 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
+import { SidebarDataExperience } from 'src/app/consts/sidebarData.const';
+import { InitPage } from 'src/app/models/InitPage.model';
 import { ObservableService } from 'src/app/services/observable/observable.service';
 
 @Component({
@@ -9,11 +11,21 @@ import { ObservableService } from 'src/app/services/observable/observable.servic
 })
 export class SidebarComponent implements OnInit {
   selectedPage$ = this.observableService.selectedPage$
+  experience = SidebarDataExperience
 
   constructor(private observableService: ObservableService,) { }
 
   ngOnInit(): void {
 
+  }
+
+  changeSelected(page: string, subPage: string){
+    let tempSelectedPage : InitPage = {
+      page: page,
+      subPage: subPage,
+    };
+    console.log("tempSelectedPage", tempSelectedPage)
+    this.observableService.setPage(tempSelectedPage)
   }
 
 }

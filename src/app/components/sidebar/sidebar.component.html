@@ -1,123 +1,92 @@
-<div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 100%">
-  <ul class="nav nav-pills flex-column mb-auto">
-    <li class="nav-item">
-      <a href="#" class="nav-link text-white" aria-current="page">
-        <img alt="enterprise" src="assets/icon/enterprises/nttdata.png" height="16">
+<div class="sidebar d-flex flex-column flex-shrink-0 p-3 text-white bg-dark">
+  <ul *ngIf="(selectedPage$ | async)?.page == 'logo'" class="nav nav-pills flex-column mb-auto">
+    <li>
+      <a href="#" class="nav-link text-white">
+        <img alt="experience" src="assets/icon/main/logo-pa.svg" width="16" height="16">
+        about me
       </a>
     </li>
-    <li *ngIf="(selectedPage$ | async)?.page == 'logo'">
-      <a href="#" class="nav-link text-white">
-        <img alt="enterprise" src="assets/icon/enterprises/enterprise.svg" width="16" height="16">
-        logo
-      </a>
+    <li class="list-unstyled">
+      <button class="btn btn-toggle align-items-center rounded collapsed text-white dropdown-toggle"
+        data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+        <img alt="experience" src="assets/icon/main/logo-pa.svg" width="16" height="16"> Home about
+      </button>
+      <div class="collapse" id="home-collapse">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li><a href="#" class="text-white rounded">Overview about</a></li>
+          <li><a href="#" class="text-white rounded">Updates about</a></li>
+          <li><a href="#" class="text-white rounded">Reports about</a></li>
+        </ul>
+      </div>
     </li>
-    <li *ngIf="(selectedPage$ | async)?.page == 'experience'">
+  </ul>
+
+  <ul *ngIf="(selectedPage$ | async)?.page == 'experience'" class="nav nav-pills flex-column mb-auto">
+    <div *ngFor="let item of experience">
+      <li class="nav-item" *ngIf="!item.multiple" [ngClass]="{'active' : (selectedPage$ | async)?.subPage == item.tag}"
+        (click)="changeSelected('experience', item.tag)">
+        <a class="nav-link text-white" aria-current="page">
+          <img alt="{{item.logo}}" title="{{item.name}}" src="assets/icon/experience/{{item.logo}}" height="16">
+          {{item.description}}
+        </a>
+      </li>
+      <li class="nav-item" *ngIf="item.multiple" [ngClass]="{'active' : (selectedPage$ | async)?.subPage == item.tag}">
+        <button title="{{item.name}}"
+          class="btn btn-toggle align-items-center rounded collapsed text-white dropdown-toggle"
+          data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+          <img alt="{{item.logo}}" src="assets/icon/experience/{{item.logo}}" height="16"> {{item.description}}
+        </button>
+        <div class="collapse" id="home-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li *ngFor="let subItem of item.subData"><a title="{{subItem.name}}" class="text-white rounded"
+                (click)="changeSelected('experience', item.tag)">{{subItem.name}}</a></li>
+          </ul>
+        </div>
+      </li>
+    </div>
+  </ul>
+
+  <ul *ngIf="(selectedPage$ | async)?.page == 'projects'" class="nav nav-pills flex-column mb-auto">
+    <li>
       <a href="#" class="nav-link text-white">
-        <img alt="enterprise" src="assets/icon/enterprises/enterprise.svg" width="16" height="16">
-        experience
-      </a>
-    </li>
-    <li *ngIf="(selectedPage$ | async)?.page == 'projects'">
-      <a href="#" class="nav-link text-white">
-        <img alt="enterprise" src="assets/icon/enterprises/enterprise.svg" width="16" height="16">
+        <img alt="experience" src="assets/icon/projects/projects.svg" width="16" height="16">
         projects
       </a>
     </li>
-    <li *ngIf="(selectedPage$ | async)?.page == 'studies'">
+    <li class="list-unstyled">
+      <button class="btn btn-toggle align-items-center rounded collapsed text-white dropdown-toggle"
+        data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+        <img alt="experience" src="assets/icon/projects/projects.svg" width="16" height="16"> Home projects
+      </button>
+      <div class="collapse" id="home-collapse">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li><a href="#" class="text-white rounded">Overview projects</a></li>
+          <li><a href="#" class="text-white rounded">Updates projects</a></li>
+          <li><a href="#" class="text-white rounded">Reports projects</a></li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+
+  <ul *ngIf="(selectedPage$ | async)?.page == 'studies'" class="nav nav-pills flex-column mb-auto">
+    <li>
       <a href="#" class="nav-link text-white">
-        <img alt="enterprise" src="assets/icon/enterprises/enterprise.svg" width="16" height="16">
+        <img alt="experience" src="assets/icon/studies/studies.svg" width="16" height="16">
         studies
       </a>
     </li>
     <li class="list-unstyled">
-      <button class="btn btn-toggle align-items-center rounded collapsed text-white dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
-        <img alt="enterprise" src="assets/icon/enterprises/enterprise.svg" width="16" height="16"> Home
+      <button class="btn btn-toggle align-items-center rounded collapsed text-white dropdown-toggle"
+        data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+        <img alt="experience" src="assets/icon/studies/studies.svg" width="16" height="16"> Home studies
       </button>
       <div class="collapse" id="home-collapse">
         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-          <li><a href="#" class="text-white rounded">Overview</a></li>
-          <li><a href="#" class="text-white rounded">Updates</a></li>
-          <li><a href="#" class="text-white rounded">Reports</a></li>
+          <li><a href="#" class="text-white rounded">Overview studies</a></li>
+          <li><a href="#" class="text-white rounded">Updates studies</a></li>
+          <li><a href="#" class="text-white rounded">Reports studies</a></li>
         </ul>
       </div>
-    </li>
-    <li>
-      <a href="#" class="nav-link text-white">
-        <img alt="enterprise" src="assets/icon/enterprises/enterprise.svg" width="16" height="16">
-        Orders
-      </a>
-    </li>
-    <li>
-      <a href="#" class="nav-link text-white">
-        <img alt="enterprise" src="assets/icon/enterprises/enterprise.svg" width="16" height="16">
-        Products
-      </a>
-    </li>
-    <li>
-      <a href="#" class="nav-link text-white">
-        <img alt="enterprise" src="assets/icon/enterprises/enterprise.svg" width="16" height="16">
-        Customers
-      </a>
-    </li>
-    <li>
-      <a href="#" class="nav-link text-white">
-        <img alt="enterprise" src="assets/icon/enterprises/enterprise.svg" width="16" height="16">
-        Customers
-      </a>
-    </li>
-    <li>
-      <a href="#" class="nav-link text-white">
-        <img alt="enterprise" src="assets/icon/enterprises/enterprise.svg" width="16" height="16">
-        Customers
-      </a>
-    </li>
-    <li>
-      <a href="#" class="nav-link text-white">
-        <img alt="enterprise" src="assets/icon/enterprises/enterprise.svg" width="16" height="16">
-        Customers
-      </a>
-    </li>
-    <li>
-      <a href="#" class="nav-link text-white">
-        <img alt="enterprise" src="assets/icon/enterprises/enterprise.svg" width="16" height="16">
-        Customers
-      </a>
-    </li>
-    <li>
-      <a href="#" class="nav-link text-white">
-        <img alt="enterprise" src="assets/icon/enterprises/enterprise.svg" width="16" height="16">
-        Customers
-      </a>
-    </li>
-    <li>
-      <a href="#" class="nav-link text-white">
-        <img alt="enterprise" src="assets/icon/enterprises/enterprise.svg" width="16" height="16">
-        Customers
-      </a>
-    </li>
-    <li>
-      <a href="#" class="nav-link text-white">
-        <img alt="enterprise" src="assets/icon/enterprises/enterprise.svg" width="16" height="16">
-        Customers
-      </a>
-    </li>
-    <li>
-      <a href="#" class="nav-link text-white">
-        <img alt="enterprise" src="assets/icon/enterprises/enterprise.svg" width="16" height="16">
-        Customers
-      </a>
-    </li>
-    <li>
-      <a href="#" class="nav-link text-white">
-        <img alt="enterprise" src="assets/icon/enterprises/enterprise.svg" width="16" height="16">
-        Customers
-      </a>
-    </li>
-    <li>
-      <a href="#" class="nav-link text-white">
-        <img alt="enterprise" src="assets/icon/enterprises/enterprise.svg" width="16" height="16">
-        Customers
-      </a>
     </li>
   </ul>
 </div>

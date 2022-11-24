@@ -1,3 +1,4 @@
 export interface InitPage{
-  page:string
+  page:string;
+  subPage:string;
 }

@@ -3,7 +3,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { InitPage } from 'src/app/models/InitPage.model';
 
 const initPage: InitPage = {
-  page: 'logo'
+  page: 'logo',
+  subPage: 'first',
 };
 
 @Injectable({
