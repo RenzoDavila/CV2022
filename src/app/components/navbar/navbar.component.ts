@@ -9,8 +9,9 @@ import { ObservableService } from 'src/app/services/observable/observable.servic
 })
 export class NavbarComponent implements OnInit {
   selectedPage: InitPage = {
-    page: 'logo',
-    subPage: 'first'
+    page: 'main',
+    subPage: 'first',
+    subPageItem: 'first'
   };
 
   constructor(private observableService: ObservableService) {}
@@ -23,6 +24,7 @@ export class NavbarComponent implements OnInit {
     let tempSelectedPage : InitPage = {
       page: page,
       subPage: 'first',
+      subPageItem: 'first'
     };
     // this.selectedPage.page = page;
     this.observableService.setPage(tempSelectedPage)

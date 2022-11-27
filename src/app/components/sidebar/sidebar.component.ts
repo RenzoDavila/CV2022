@@ -1,6 +1,9 @@
 
 import { Component, OnInit } from '@angular/core';
-import { SidebarDataExperience } from 'src/app/consts/sidebarData.const';
+import { DataExperience } from 'src/app/consts/DataExperience.const';
+import { DataMain } from 'src/app/consts/DataMain.const';
+import { DataProjects } from 'src/app/consts/DataProjects.const';
+import { DataStudies } from 'src/app/consts/DataStudies.const';
 import { InitPage } from 'src/app/models/InitPage.model';
 import { ObservableService } from 'src/app/services/observable/observable.service';
 
@@ -11,7 +14,10 @@ import { ObservableService } from 'src/app/services/observable/observable.servic
 })
 export class SidebarComponent implements OnInit {
   selectedPage$ = this.observableService.selectedPage$
-  experience = SidebarDataExperience
+  main = DataMain
+  experience = DataExperience
+  projects = DataProjects
+  studies = DataStudies
 
   constructor(private observableService: ObservableService,) { }
 
@@ -19,10 +25,11 @@ export class SidebarComponent implements OnInit {
 
   }
 
-  changeSelected(page: string, subPage: string){
+  changeSelected(page: string, subPage: string, subPageItem: string){
     let tempSelectedPage : InitPage = {
       page: page,
       subPage: subPage,
+      subPageItem: subPageItem,
     };
     console.log("tempSelectedPage", tempSelectedPage)
     this.observableService.setPage(tempSelectedPage)
