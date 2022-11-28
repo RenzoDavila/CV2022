@@ -13,7 +13,7 @@
         <div class="collapse" id="home-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             <li title="{{item.name}}" *ngFor="let subItem of item.subData" class="subData" (click)="changeSelected('main', item.tag, subItem.tag)">
-              <a title="{{subItem.name}}" class="text-white rounded" [ngClass]="{'selected' : (selectedPage$ | async)?.subPageItem == subItem.tag}">{{subItem.name}}</a>
+              <a title="{{subItem.name}}" class="text-white rounded" [ngClass]="{'selected' : (selectedPage$ | async)?.subPageItem == subItem.tag && (selectedPage$ | async)?.subPage == item.tag}">{{subItem.name}}</a>
             </li>
           </ul>
         </div>
@@ -35,7 +35,7 @@
         <div class="collapse" id="home-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             <li title="{{item.name}}" *ngFor="let subItem of item.subData" class="subData" (click)="changeSelected('experience', item.tag, subItem.tag)">
-              <a title="{{subItem.name}}" class="text-white rounded" [ngClass]="{'selected' : (selectedPage$ | async)?.subPageItem == subItem.tag}">{{subItem.name}}</a>
+              <a title="{{subItem.name}}" class="text-white rounded" [ngClass]="{'selected' : (selectedPage$ | async)?.subPageItem == subItem.tag && (selectedPage$ | async)?.subPage == item.tag}">{{subItem.name}}</a>
             </li>
           </ul>
         </div>
@@ -57,7 +57,7 @@
         <div class="collapse" id="home-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             <li title="{{item.name}}" *ngFor="let subItem of item.subData" class="subData" (click)="changeSelected('projects', item.tag, subItem.tag)">
-              <a title="{{subItem.name}}" class="text-white rounded" [ngClass]="{'selected' : (selectedPage$ | async)?.subPageItem == subItem.tag}">{{subItem.name}}</a>
+              <a title="{{subItem.name}}" class="text-white rounded" [ngClass]="{'selected' : (selectedPage$ | async)?.subPageItem == subItem.tag && (selectedPage$ | async)?.subPage == item.tag}">{{subItem.name}}</a>
             </li>
           </ul>
         </div>
@@ -79,7 +79,7 @@
         <div class="collapse" id="home-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             <li title="{{item.name}}" *ngFor="let subItem of item.subData" class="subData" (click)="changeSelected('studies', item.tag, subItem.tag)">
-              <a title="{{subItem.name}}" class="text-white rounded" [ngClass]="{'selected' : (selectedPage$ | async)?.subPageItem == subItem.tag}">{{subItem.name}}</a>
+              <a title="{{subItem.name}}" class="text-white rounded" [ngClass]="{'selected' : (selectedPage$ | async)?.subPageItem == subItem.tag && (selectedPage$ | async)?.subPage == item.tag}">{{subItem.name}}</a>
             </li>
           </ul>
         </div>
