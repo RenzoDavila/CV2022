@@ -1,19 +1,11 @@
 export const DataMain = [
   {
-    name: "Sobre mi",
-    tag: "first", //es obligatorio el first para que lo marque primero
-    description: "Sobre mi",
-    logo: "logo-pa.svg",
+    name: "Renzo Davila",
+    tag: "main",
+    description: "Renzo Davila",
+    logoPropio: false, //si se pone false el por defecto es icon/main/main.svg
     multiple: false,
     subData: [{ name: "", tag: ""}]
-  },
-  {
-    name: "Descargar CV",
-    tag: "descargar",
-    description: "Descargar CV",
-    logo: "logo-pa.svg",
-    multiple: false,
-    subData: [{ name: "", tag: ""}]
-  },
+  }
 ]
 

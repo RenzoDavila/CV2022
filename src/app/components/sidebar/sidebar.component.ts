@@ -19,7 +19,7 @@ export class SidebarComponent implements OnInit {
   projects = DataProjects
   studies = DataStudies
 
-  constructor(private observableService: ObservableService,) { }
+  constructor(private observableService: ObservableService) { }
 
   ngOnInit(): void {
 
@@ -31,7 +31,6 @@ export class SidebarComponent implements OnInit {
       subPage: subPage,
       subPageItem: subPageItem,
     };
-    console.log("tempSelectedPage", tempSelectedPage)
     this.observableService.setPage(tempSelectedPage)
   }
 

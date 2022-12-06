@@ -1,14 +1,20 @@
 <div class="sidebar d-flex flex-column flex-shrink-0 p-3 text-white bg-dark">
   <ul *ngIf="(selectedPage$ | async)?.page == 'main'" class="nav nav-pills flex-column mb-auto">
-    <div *ngFor="let item of main">
-      <li title="{{item.name}}" class="nav-item" *ngIf="!item.multiple" [ngClass]="{'active' : (selectedPage$ | async)?.subPage == item.tag}" (click)="changeSelected('main', item.tag, 'first')">
-        <a class="nav-link text-white" aria-current="page">
-          <img alt="{{item.logo}}" title="{{item.name}}" src="assets/icon/main/{{item.logo}}" height="16"> {{item.description}}
+    <div *ngFor="let item of main" class="sidebar-row">
+      <li title="{{item.name}}" class="nav-item" *ngIf="!item.multiple" [ngClass]="{'active' : (selectedPage$ | async)?.subPage == item.tag}" (click)="changeSelected('main', item.tag, 'main')">
+        <a *ngIf="!item.logoPropio" class="nav-link text-white" aria-current="page">
+          <img alt="main.svg" title="{{item.name}}" src="assets/icon/main/main.svg" height="16"> {{item.description}}
+        </a>
+        <a *ngIf="item.logoPropio" class="nav-link text-white align-middle" aria-current="page">
+          <img alt="{{item.tag}}.svg" title="{{item.name}}" src="assets/icon/main/{{item.tag}}.svg" height="16"> {{item.description}}
         </a>
       </li>
       <li title="{{item.name}}" class="nav-item" *ngIf="item.multiple">
-        <button title="{{item.name}}" [ngClass]="{'active' : (selectedPage$ | async)?.subPage == item.tag}" class="btn btn-toggle align-items-center rounded collapsed text-white dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
-          <img alt="{{item.logo}}" src="assets/icon/main/{{item.logo}}" height="16"> {{item.description}}
+        <button *ngIf="!item.logoPropio" title="{{item.name}}" [ngClass]="{'active' : (selectedPage$ | async)?.subPage == item.tag}" class="btn btn-toggle align-items-center rounded collapsed text-white dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+          <img alt="main.svg" src="assets/icon/main/main.svg" height="16"> {{item.description}}
+        </button>
+        <button *ngIf="item.logoPropio" title="{{item.name}}" [ngClass]="{'active' : (selectedPage$ | async)?.subPage == item.tag}" class="btn btn-toggle align-items-center rounded collapsed text-white dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+          <img alt="{{item.tag}}.svg" src="assets/icon/main/{{item.tag}}.svg" height="16"> {{item.description}}
         </button>
         <div class="collapse" id="home-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
@@ -23,14 +29,20 @@
 
   <ul *ngIf="(selectedPage$ | async)?.page == 'experience'" class="nav nav-pills flex-column mb-auto">
     <div *ngFor="let item of experience">
-      <li title="{{item.name}}" class="nav-item" *ngIf="!item.multiple" [ngClass]="{'active' : (selectedPage$ | async)?.subPage == item.tag}" (click)="changeSelected('experience', item.tag, 'first')">
-        <a class="nav-link text-white" aria-current="page">
-          <img alt="{{item.logo}}" title="{{item.name}}" src="assets/icon/experience/{{item.logo}}" height="16"> {{item.description}}
+      <li title="{{item.name}}" class="nav-item" *ngIf="!item.multiple" [ngClass]="{'active' : (selectedPage$ | async)?.subPage == item.tag}" (click)="changeSelected('experience', item.tag, 'experience')">
+        <a *ngIf="!item.logoPropio" class="nav-link text-white" aria-current="page">
+          <img alt="experience.svg" title="{{item.name}}" src="assets/icon/experience/experience.svg" height="16"> {{item.description}}
+        </a>
+        <a *ngIf="item.logoPropio" class="nav-link text-white" aria-current="page">
+          <img alt="{{item.tag}}.svg" title="{{item.name}}" src="assets/icon/experience/{{item.tag}}.svg" height="16"> {{item.description}}
         </a>
       </li>
       <li title="{{item.name}}" class="nav-item" *ngIf="item.multiple">
-        <button title="{{item.name}}" [ngClass]="{'active' : (selectedPage$ | async)?.subPage == item.tag}" class="btn btn-toggle align-items-center rounded collapsed text-white dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
-          <img alt="{{item.logo}}" src="assets/icon/experience/{{item.logo}}" height="16"> {{item.description}}
+        <button *ngIf="!item.logoPropio" title="{{item.name}}" [ngClass]="{'active' : (selectedPage$ | async)?.subPage == item.tag}" class="btn btn-toggle align-items-center rounded collapsed text-white dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+          <img alt="experience.svg" src="assets/icon/experience/experience.svg" height="16"> {{item.description}}
+        </button>
+        <button *ngIf="item.logoPropio" title="{{item.name}}" [ngClass]="{'active' : (selectedPage$ | async)?.subPage == item.tag}" class="btn btn-toggle align-items-center rounded collapsed text-white dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+          <img alt="{{item.tag}}.svg" src="assets/icon/experience/{{item.tag}}.svg" height="16"> {{item.description}}
         </button>
         <div class="collapse" id="home-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
@@ -45,14 +57,21 @@
 
   <ul *ngIf="(selectedPage$ | async)?.page == 'projects'" class="nav nav-pills flex-column mb-auto">
     <div *ngFor="let item of projects">
-      <li title="{{item.name}}" class="nav-item" *ngIf="!item.multiple" [ngClass]="{'active' : (selectedPage$ | async)?.subPage == item.tag}" (click)="changeSelected('projects', item.tag, 'first')">
-        <a class="nav-link text-white" aria-current="page">
-          <img alt="{{item.logo}}" title="{{item.name}}" src="assets/icon/projects/{{item.logo}}" height="16"> {{item.description}}
+      <li title="{{item.name}}" class="nav-item" *ngIf="!item.multiple" [ngClass]="{'active' : (selectedPage$ | async)?.subPage == item.tag}" (click)="changeSelected('projects', item.tag, 'projects')">
+        <a *ngIf="!item.logoPropio" class="nav-link text-white" aria-current="page">
+          <img alt="projects.svg" title="{{item.name}}" src="assets/icon/projects/projects.svg" height="16"> {{item.description}}
         </a>
+        <a *ngIf="item.logoPropio" class="nav-link text-white" aria-current="page">
+          <img alt="{{item.tag}}.svg" title="{{item.name}}" src="assets/icon/projects/{{item.tag}}.svg" height="16"> {{item.description}}
+        </a>
+
       </li>
       <li title="{{item.name}}" class="nav-item" *ngIf="item.multiple">
-        <button title="{{item.name}}" [ngClass]="{'active' : (selectedPage$ | async)?.subPage == item.tag}" class="btn btn-toggle align-items-center rounded collapsed text-white dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
-          <img alt="{{item.logo}}" src="assets/icon/projects/{{item.logo}}" height="16"> {{item.description}}
+        <button *ngIf="!item.logoPropio" title="{{item.name}}" [ngClass]="{'active' : (selectedPage$ | async)?.subPage == item.tag}" class="btn btn-toggle align-items-center rounded collapsed text-white dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+          <img alt="projects.svg" src="assets/icon/projects/projects.svg" height="16"> {{item.description}}
+        </button>
+        <button *ngIf="item.logoPropio" title="{{item.name}}" [ngClass]="{'active' : (selectedPage$ | async)?.subPage == item.tag}" class="btn btn-toggle align-items-center rounded collapsed text-white dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+          <img alt="{{item.tag}}.svg" src="assets/icon/projects/{{item.tag}}.svg" height="16"> {{item.description}}
         </button>
         <div class="collapse" id="home-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
@@ -67,14 +86,21 @@
 
   <ul *ngIf="(selectedPage$ | async)?.page == 'studies'" class="nav nav-pills flex-column mb-auto">
     <div *ngFor="let item of studies">
-      <li title="{{item.name}}" class="nav-item" *ngIf="!item.multiple" [ngClass]="{'active' : (selectedPage$ | async)?.subPage == item.tag}" (click)="changeSelected('studies', item.tag, 'first')">
-        <a class="nav-link text-white" aria-current="page">
-          <img alt="{{item.logo}}" title="{{item.name}}" src="assets/icon/studies/{{item.logo}}" height="16"> {{item.description}}
+      <li title="{{item.name}}" class="nav-item" *ngIf="!item.multiple" [ngClass]="{'active' : (selectedPage$ | async)?.subPage == item.tag}" (click)="changeSelected('studies', item.tag, 'studies')">
+        <a *ngIf="!item.logoPropio" class="nav-link text-white" aria-current="page">
+          <img alt="studies.svg" title="{{item.name}}" src="assets/icon/studies/studies.svg" height="16"> {{item.description}}
         </a>
+        <a *ngIf="item.logoPropio" class="nav-link text-white" aria-current="page">
+          <img alt="{{item.tag}}.svg" title="{{item.name}}" src="assets/icon/studies/{{item.tag}}.svg" height="16"> {{item.description}}
+        </a>
+
       </li>
       <li title="{{item.name}}" class="nav-item" *ngIf="item.multiple">
-        <button title="{{item.name}}" [ngClass]="{'active' : (selectedPage$ | async)?.subPage == item.tag}" class="btn btn-toggle align-items-center rounded collapsed text-white dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
-          <img alt="{{item.logo}}" src="assets/icon/studies/{{item.logo}}" height="16"> {{item.description}}
+        <button *ngIf="!item.logoPropio" title="{{item.name}}" [ngClass]="{'active' : (selectedPage$ | async)?.subPage == item.tag}" class="btn btn-toggle align-items-center rounded collapsed text-white dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+          <img alt="studies.svg" src="assets/icon/studies/studies.svg" height="16"> {{item.description}}
+        </button>
+        <button *ngIf="item.logoPropio" title="{{item.name}}" [ngClass]="{'active' : (selectedPage$ | async)?.subPage == item.tag}" class="btn btn-toggle align-items-center rounded collapsed text-white dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+          <img alt="{{item.tag}}.svg" src="assets/icon/studies/{{item.tag}}.svg" height="16"> {{item.description}}
         </button>
         <div class="collapse" id="home-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">

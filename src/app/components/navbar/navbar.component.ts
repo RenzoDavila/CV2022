@@ -10,8 +10,8 @@ import { ObservableService } from 'src/app/services/observable/observable.servic
 export class NavbarComponent implements OnInit {
   selectedPage: InitPage = {
     page: 'main',
-    subPage: 'first',
-    subPageItem: 'first'
+    subPage: 'main',
+    subPageItem: 'main'
   };
 
   constructor(private observableService: ObservableService) {}
@@ -20,14 +20,17 @@ export class NavbarComponent implements OnInit {
     this.observableService.selectedPage$.subscribe((page:InitPage) => this.selectedPage = page)
   }
 
-  changeSelected(page: string){
+  changeSelected(page: string, subPage:string){
     let tempSelectedPage : InitPage = {
       page: page,
-      subPage: 'first',
-      subPageItem: 'first'
+      subPage: subPage,
+      subPageItem: 'main'
     };
-    // this.selectedPage.page = page;
     this.observableService.setPage(tempSelectedPage)
+  }
+
+  downloadCV(){
+    console.log("Estamos Descargando el CV")
   }
 
 }

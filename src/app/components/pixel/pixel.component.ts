@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ObservableService } from 'src/app/services/observable/observable.service';
 
 @Component({
@@ -8,6 +8,10 @@ import { ObservableService } from 'src/app/services/observable/observable.servic
 })
 export class PixelComponent implements OnInit {
   selectedPage$ = this.observableService.selectedPage$
+  @Input() main:any
+  @Input() experience:any
+  @Input() projects:any
+  @Input() studies:any
 
   constructor(private observableService: ObservableService,) { }
 

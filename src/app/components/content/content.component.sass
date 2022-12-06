@@ -2,8 +2,9 @@
   height: 100%
   overflow: auto
   position: fixed
-  padding-top: 13px !important
-
+  margin-top: 13px !important
+  padding-bottom: 70px !important
+  top: 47.5px
 
 .sidebar::-webkit-scrollbar
   display: none
@@ -12,11 +13,22 @@
   -ms-overflow-style: none
   scrollbar-width: none
 
-// .content
-//   scroll-snap-type: y mandatory
-//   overflow-y: scroll
+.mandatory
+  scroll-snap-type: y mandatory
+  overflow-y: scroll
 
-// .section
-//   scroll-snap-align: start
+.section
+  scroll-snap-align: start
+  padding-top: 66px !important
 
+@media only screen and (min-width: 768px)
+  .mandatory
+    overflow-y: hidden
+
+// .mandatory::-webkit-scrollbar
+//   display: none
+
+// .mandatory
+//   -ms-overflow-style: none
+//   scrollbar-width: none
 

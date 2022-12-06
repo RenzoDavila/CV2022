@@ -74,12 +74,11 @@
 </div>
 <div class="row m-0" style="height: 50%; width: 100%;">
   <div class="col-12 desk p-0">
-    <img class="img" alt="experience" src="assets/icon/main/desk.svg">
-    <img *ngIf="(selectedPage$ | async)?.page == 'main'" class="img" alt="main" src="assets/icon/screen/screen-logo-pa.svg">
-    <img *ngIf="(selectedPage$ | async)?.page == 'experience'" class="img" alt="experience" src="assets/icon/screen/screen-experience.svg">
-    <img *ngIf="(selectedPage$ | async)?.page == 'experience'" class="img" alt="experience" src="assets/icon/screen/screen-logo-pa.svg">
-    <img *ngIf="(selectedPage$ | async)?.page == 'projects'" class="img" alt="projects" src="assets/icon/screen/screen-projects.svg">
-    <img *ngIf="(selectedPage$ | async)?.page == 'studies'" class="img" alt="studies" src="assets/icon/screen/screen-studies.svg">
-    <img class="img" alt="experience" src="assets/icon/main/me.svg">
+    <img class="img" alt="experience" src="assets/icon/general/desk.svg">
+    <img *ngIf="(selectedPage$ | async)?.page == 'main'" class="img" alt="main" src="assets/icon/screen/screen-main-{{(selectedPage$ | async)?.subPage}}.svg">
+    <img *ngIf="(selectedPage$ | async)?.page == 'experience'" class="img" alt="experience" src="assets/icon/screen/screen-experience-{{(selectedPage$ | async)?.subPage}}.svg">
+    <img *ngIf="(selectedPage$ | async)?.page == 'projects'" class="img" alt="projects" src="assets/icon/screen/screen-projects-{{(selectedPage$ | async)?.subPage}}.svg">
+    <img *ngIf="(selectedPage$ | async)?.page == 'studies'" class="img" alt="studies" src="assets/icon/screen/screen-studies-{{(selectedPage$ | async)?.subPage}}.svg">
+    <img class="img" alt="experience" src="assets/icon/general/me.svg">
   </div>
 </div>

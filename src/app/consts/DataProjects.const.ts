@@ -1,17 +1,17 @@
 export const DataProjects = [
   {
-    name: "facturación electrónica ",
-    tag: "first", //es obligatorio el first para que lo marque primero
+    name: "facturación electrónica",
+    tag: "billing",
     description: "facturación electrónica - stack MEAN",
-    logo: "billing.svg",
+    logoPropio: true, //si se pone false el por defecto es icon/projects/projects.svg
     multiple: false,
     subData: [{ name: "", tag: ""}]
   },
   {
     name: "LIGA NACIONAL DE BASCKET DEL PERU - SEDE AREQUIPA",
-    tag: "liga",
+    tag: "fdpb",
     description: "LIGA BASCKET - SEDE AREQUIPA",
-    logo: "projects.svg",
+    logoPropio: true,
     multiple: false,
     subData: [{ name: "", tag: ""}]
   },

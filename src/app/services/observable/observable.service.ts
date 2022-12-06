@@ -4,8 +4,8 @@ import { InitPage } from 'src/app/models/InitPage.model';
 
 const initPage: InitPage = {
   page: 'main',
-  subPage: 'first',
-  subPageItem: 'first',
+  subPage: 'main',
+  subPageItem: 'main',
 };
 
 @Injectable({
