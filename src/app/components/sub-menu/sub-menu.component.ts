@@ -33,7 +33,6 @@ export class SubMenuComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectedPage$.subscribe((selectedPage) => {
-      console.log("selectedPage", selectedPage)
       this.selectedPage = selectedPage
       this.menuPagination = 0
       this.menuPag = 0
@@ -108,8 +107,6 @@ export class SubMenuComponent implements OnInit {
     let subMenuTemp: any[] = []
 
     subMenuList = this.menu[this.menuPag].filter( (item: any ) => item.tag === subPage)[0].subData;
-
-    console.log("subMenuList", subMenuList)
 
     this.subMenuLength = subMenuList.length
 

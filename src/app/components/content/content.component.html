@@ -1,11 +1,11 @@
 <app-navbar></app-navbar>
 <div class="mandatory row content w-100 h-100 border-0 m-0">
   <div class="col-md-3 bg-dark text-center text-white themed-grid-col sidebar d-none d-md-block d-print-block p-0">
-    <app-sidebar></app-sidebar>
+    <app-sidebar [studies]="studies" [projects]="projects" [experience]="experience" [main]="main"></app-sidebar>
   </div>
   <div class="col-0 col-md-3"></div>
   <div *ngIf="(selectedPage$ | async)?.page != 'main'" class="col-12 col-md-9 pt-3 px-0 text-center themed-grid-col h-100 d-md-none section">
-    <app-sub-menu [studies]="studies" [studies]="studies" [projects]="projects" [experience]="experience" [main]="main"></app-sub-menu>
+    <app-sub-menu [studies]="studies" [projects]="projects" [experience]="experience" [main]="main"></app-sub-menu>
   </div>
   <div class="col-12 col-md-9 pt-3 px-0 text-center themed-grid-col h-100 section" style="background-color: #20375B">
     <app-pixel [studies]="studies" [projects]="projects" [experience]="experience" [main]="main"></app-pixel>

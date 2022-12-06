@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DataExperience } from 'src/app/consts/DataExperience.const';
 import { DataMain } from 'src/app/consts/DataMain.const';
 import { DataProjects } from 'src/app/consts/DataProjects.const';
@@ -14,15 +14,40 @@ import { ObservableService } from 'src/app/services/observable/observable.servic
 })
 export class SidebarComponent implements OnInit {
   selectedPage$ = this.observableService.selectedPage$
-  main = DataMain
-  experience = DataExperience
-  projects = DataProjects
-  studies = DataStudies
+  selectedPage: InitPage = {
+    page: '',
+    subPage: '',
+    subPageItem: ''
+  }
+  @Input() main: any
+  @Input() experience: any
+  @Input() projects: any
+  @Input() studies: any
+  menu: any = []
 
   constructor(private observableService: ObservableService) { }
 
   ngOnInit(): void {
+    this.selectedPage$.subscribe((selectedPage) => {
+      this.selectedPage = selectedPage
+      this.menu = []
+      this.getMenu();
+    });
+  }
 
+  getMenu() {
+    if (this.selectedPage.page == "main") {
+      this.menu = this.main
+    }
+    if (this.selectedPage.page == "experience") {
+      this.menu = this.experience
+    }
+    if (this.selectedPage.page == "projects") {
+      this.menu = this.projects
+    }
+    if (this.selectedPage.page == "studies") {
+      this.menu = this.studies
+    }
   }
 
   changeSelected(page: string, subPage: string, subPageItem: string){
