@@ -24,7 +24,14 @@
 </div>
 
 <div *ngIf="subMenuExist" class="row m-0">
-  <div class="row m-0" [ngClass]="{'principal' : subMenuLength > 4}">
+  <div class="row row-back m-0">
+    <div class="col-2 p-0 arrow" (click)="itemSelected(false, selectedPage.page, selectedSubPage, selectedSubPage)">
+      <img alt="atras.svg" title="atras" src="assets/icon/general/arrow-back.svg">
+    </div>
+    <div class="col title">{{selectedSubPage}}</div>
+    <div class="col-2 p-0 arrow"></div>
+  </div>
+  <div class="row row-subMenu m-0" [ngClass]="{'principal-subMenu' : subMenuLength > 4}">
     <div *ngFor="let item of subMenu[subMenuPag]" class="col-6 p-0 tec" (click)="itemSelected(false, selectedPage.page, selectedSubPage, item.tag)">
       <div class="img-text">{{item.description}}</div>
       <img *ngIf="!item.logoPropio" alt="{{selectedPage.page}}.svg" title="{{item.name}}" src="assets/icon/{{selectedPage.page}}/{{selectedPage.page}}.svg">
@@ -32,17 +39,14 @@
     </div>
   </div>
   <div class="row pagination m-0">
-    <div class="col-2 p-0 arrow">
-      <img alt="atras.svg" title="atras" src="assets/icon/general/arrow-back.svg">
-    </div>
-    <div *ngIf="subMenuLength > 4 && this.subMenuPag != 0" class="col-2 p-0 arrow" (click)="changeSubPag(-1)">
+    <div *ngIf="subMenuLength > 4 && this.subMenuPag != 0" class="col-2 p-0 arrow d-flex align-items-center justify-content-center" (click)="changeSubPag(-1)">
       <img alt="anterior.svg" title="anterior" src="assets/icon/general/arrow-left.svg">
     </div>
     <div *ngIf="!(this.subMenuPag != 0)" class="col-2 p-0 arrow"></div>
     <div *ngIf="subMenuLength > 4" class="col p-0 pagination-text container d-flex align-items-center justify-content-center">
       P{{subMenuPag + 1}}
     </div>
-    <div *ngIf="subMenuLength > 4 && this.subMenuPag != this.subMenuPagination" class="col-2 p-0 arrow" (click)="changeSubPag(1)">
+    <div *ngIf="subMenuLength > 4 && this.subMenuPag != this.subMenuPagination" class="col-2 p-0 arrow d-flex align-items-center justify-content-center" (click)="changeSubPag(1)">
       <img alt="siguiente.svg" title="siguiente" src="assets/icon/general/arrow-right.svg">
     </div>
     <div *ngIf="!(this.subMenuPag != this.subMenuPagination)" class="col-2 p-0 arrow"></div>

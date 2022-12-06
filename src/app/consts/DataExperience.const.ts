@@ -17,7 +17,7 @@ export const DataExperience = [
   {
     name: "ADIASOFT",
     tag: "adiasoft",
-    description: "ADIASOFT E.I.R.L",
+    description: "ADIASOFT E.I.R.L.",
     logoPropio: true,
     multiple: false,
     subData: [{ name: "", tag: ""}]
@@ -25,23 +25,39 @@ export const DataExperience = [
   {
     name: "WEB CONTROL",
     tag: "webControl",
-    description: "WEB CONTROL SYSTEMS PERU S.A.C",
+    description: "WEB CONTROL SYSTEMS PERU S.A.C.",
     logoPropio: true,
     multiple: false,
     subData: [{ name: "", tag: ""}]
   },
   {
-    name: "WEB CONTROL",
-    tag: "webControl",
-    description: "WEB CONTROL SYSTEMS PERU S.A.C",
+    name: "FRANCISCO ROJAS",
+    tag: "frs",
+    description: "I.E.P. FRANCISCO ROJAS SCHOOL",
     logoPropio: true,
     multiple: false,
     subData: [{ name: "", tag: ""}]
   },
   {
-    name: "WEB CONTROL",
-    tag: "webControl",
-    description: "WEB CONTROL SYSTEMS PERU S.A.C",
+    name: "OROOPLEX",
+    tag: "orooplex",
+    description: "OROOPLEX",
+    logoPropio: true,
+    multiple: false,
+    subData: [{ name: "", tag: ""}]
+  },
+  {
+    name: "ANDROMEDA",
+    tag: "andromeda",
+    description: "ANDROMEDA.PE S.A.C.",
+    logoPropio: true,
+    multiple: false,
+    subData: [{ name: "", tag: ""}]
+  },
+  {
+    name: "AUDITEL",
+    tag: "auditel",
+    description: "AUDITEL S.A.",
     logoPropio: true,
     multiple: false,
     subData: [{ name: "", tag: ""}]

@@ -29,6 +29,7 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectedPage$.subscribe((selectedPage) => {
+      console.log("selectedPage", selectedPage)
       this.selectedPage = selectedPage
       this.menu = []
       this.getMenu();
