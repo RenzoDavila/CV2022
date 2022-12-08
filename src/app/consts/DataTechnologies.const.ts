@@ -1,7 +1,7 @@
 export const DataTechnologies = [
   { id:1, name: "MONGO DB", tag: "mongodb" },
   { id:2, name: "EXPRESS JS", tag: "express" },
-  { id:3, name: "ANGULAR", tag: "angular" },
+  { id:3, name: "ANGULAR", tag: "angularjs" },
   { id:4, name: "NODE JS", tag: "node" },
   { id:5, name: "BOOTSTRAP", tag: "bootstrap" },
   { id:6, name: "SPRING BOOT", tag: "spring-boot" },
