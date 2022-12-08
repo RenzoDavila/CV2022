@@ -45,14 +45,9 @@ export const DataExperience = [
     tag: "orooplex",
     description: "OROOPLEX",
     ownLogo: true,
-    multiple: true,
+    multiple: false,
     technologies: {all: false, used: []},
-    subData: [
-      { name: "OROOPLEX1", tag: "OROOPLEX1", description: "OROOPLEX1", ownLogo: false, technologies: {all: false, used: [6,3]} },
-      { name: "OROOPLEX2", tag: "OROOPLEX2", description: "OROOPLEX2", ownLogo: false, technologies: {all: false, used: [6,15,3]} },
-      { name: "OROOPLEX3", tag: "OROOPLEX3", description: "OROOPLEX3", technologies: {all: false, used: [4,9,21,11,22]} },
-      { name: "OROOPLEX4", tag: "OROOPLEX4", description: "OROOPLEX4", ownLogo: false, technologies: {all: false, used: [3,18,35]} },
-    ]
+    subData: [{ name: "", tag: "", description: "", ownLogo: false }]
   },
   {
     name: "ANDROMEDA",
@@ -68,14 +63,9 @@ export const DataExperience = [
     tag: "auditel",
     description: "AUDITEL S.A.",
     ownLogo: true,
-    multiple: true,
+    multiple: false,
     technologies: {all: false, used: []},
-    subData: [
-      { name: "AUDITEL1", tag: "AUDITEL1", description: "AUDITEL1", ownLogo: false, technologies: {all: false, used: [6,3]} },
-      { name: "AUDITEL2", tag: "AUDITEL2", description: "AUDITEL2", ownLogo: false, technologies: {all: false, used: [6,15,3]} },
-      { name: "AUDITEL3", tag: "AUDITEL3", description: "AUDITEL3", technologies: {all: false, used: [4,9,21,11,22]} },
-      { name: "AUDITEL4", tag: "AUDITEL4", description: "AUDITEL4", ownLogo: false, technologies: {all: false, used: [3,18,35]} },
-    ]
+    subData: [{ name: "", tag: "", description: "", ownLogo: false }]
   },
 ]
 
