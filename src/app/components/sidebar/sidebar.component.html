@@ -1,29 +1,24 @@
 <div class="sidebar d-flex flex-column flex-shrink-0 p-3 text-white bg-dark">
   <ul class="nav nav-pills flex-column mb-auto">
-    <div *ngFor="let item of menu" class="sidebar-row">
-      <li title="{{item.name}}" class="nav-item" *ngIf="!item.multiple" [ngClass]="{'active' : (selectedPage$ | async)?.subPage == item.tag}" (click)="changeSelected(selectedPage.page, item.tag, selectedPage.page)">
-        <a *ngIf="!item.logoPropio" class="nav-link text-white" aria-current="page">
-          <img alt="{{selectedPage.page}}.svg" title="{{item.name}}" src="assets/icon/{{selectedPage.page}}/{{selectedPage.page}}.svg" height="16"> {{item.description}}
-        </a>
-        <a *ngIf="item.logoPropio" class="nav-link text-white align-middle" aria-current="page">
-          <img alt="{{item.tag}}.svg" title="{{item.name}}" src="assets/icon/{{selectedPage.page}}/{{item.tag}}.svg" height="16"> {{item.description}}
-        </a>
-      </li>
-      <li title="{{item.name}}" class="nav-item" *ngIf="item.multiple">
-        <button *ngIf="!item.logoPropio" title="{{item.name}}" [ngClass]="{'active' : (selectedPage$ | async)?.subPage == item.tag}" class="btn btn-toggle align-items-center rounded collapsed text-white dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
-          <img alt="{{selectedPage.page}}.svg" src="assets/icon/{{selectedPage.page}}/{{selectedPage.page}}.svg" height="16"> {{item.description}}
-        </button>
-        <button *ngIf="item.logoPropio" title="{{item.name}}" [ngClass]="{'active' : (selectedPage$ | async)?.subPage == item.tag}" class="btn btn-toggle align-items-center rounded collapsed text-white dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
-          <img alt="{{item.tag}}.svg" src="assets/icon/{{selectedPage.page}}/{{item.tag}}.svg" height="16"> {{item.description}}
-        </button>
-        <div class="collapse" id="home-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li title="{{item.name}}" *ngFor="let subItem of item.subData" class="subData" (click)="changeSelected(selectedPage.page, item.tag, subItem.tag)">
-              <a title="{{subItem.name}}" class="text-white rounded" [ngClass]="{'selected' : (selectedPage$ | async)?.subPageItem == subItem.tag && (selectedPage$ | async)?.subPage == item.tag}">{{subItem.name}}</a>
-            </li>
-          </ul>
-        </div>
-      </li>
+    <div id="sidebar">
+      <div *ngFor="let item of menu" class="sidebar-row">
+        <li class="nav-item" title="{{item.name}}" [ngClass]="{'active' : (selectedPage$ | async)?.subPage == item.tag}">
+          <a class="nav-link text-white" [ngClass]="{'dropdown-toggle' : item.multiple}" id="flush-{{item.tag}}" data-bs-toggle="collapse" [attr.data-bs-target]="'#'+item.tag" aria-expanded="false" [attr.aria-controls]="item.tag" (click)="changeSelected(selectedPage.page, item.tag, item.tag)">
+            <img *ngIf="!item.ownLogo" alt="{{selectedPage.page}}.svg" title="{{item.name}}" src="assets/icon/{{selectedPage.page}}/{{selectedPage.page}}.svg" height="16">
+            <img *ngIf="item.ownLogo" alt="{{item.tag}}.svg" title="{{item.name}}" src="assets/icon/{{selectedPage.page}}/{{item.tag}}.svg" height="16">
+            {{item.description}}
+          </a>
+          <div id="{{item.tag}}" class="accordion-collapse collapse" [attr.aria-labelledby]="'flush-'+item.tag" data-bs-parent="#sidebar">
+            <ul *ngIf="item.multiple" class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li title="{{subItem.name}}" *ngFor="let subItem of item.subData" class="subData"
+                (click)="changeSelected(selectedPage.page, item.tag, subItem.tag)">
+                <a title="{{subItem.name}}" class="text-white rounded"
+                  [ngClass]="{'selected' : (selectedPage$ | async)?.subPageItem == subItem.tag && (selectedPage$ | async)?.subPage == item.tag}">{{subItem.name}}</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </div>
     </div>
   </ul>
 </div>

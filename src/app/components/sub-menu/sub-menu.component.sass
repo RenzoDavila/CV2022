@@ -15,6 +15,8 @@ div
     max-width: 100%
     height: auto
     width: auto
+    // animacion
+    animation: arrow-expand 1s linear infinite alternate
 
 .pagination-text
   color: #e1e1e1
@@ -65,3 +67,27 @@ img
   overflow: hidden
   text-overflow: ellipsis
   font-size: 6vh
+
+@keyframes arrow-expand
+  0%
+    transform: scale(1)
+  10%
+    transform: scale(1.1)
+  20%
+    transform: scale(1.2)
+  30%
+    transform: scale(1.3)
+  40%
+    transform: scale(1.4)
+  50%
+    transform: scale(1.5)
+  60%
+    transform: scale(1.4)
+  70%
+    transform: scale(1.3)
+  80%
+    transform: scale(1.2)
+  00%
+    transform: scale(1.1)
+  100%
+    transform: scale(1)

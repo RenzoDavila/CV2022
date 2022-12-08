@@ -29,7 +29,6 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectedPage$.subscribe((selectedPage) => {
-      console.log("selectedPage", selectedPage)
       this.selectedPage = selectedPage
       this.menu = []
       this.getMenu();
@@ -58,6 +57,16 @@ export class SidebarComponent implements OnInit {
       subPageItem: subPageItem,
     };
     this.observableService.setPage(tempSelectedPage)
+  }
+
+  prueba(page: string, subPage: string, subPageItem: string){
+    let tempSelectedPage : InitPage = {
+      page: page,
+      subPage: subPage,
+      subPageItem: subPageItem,
+    };
+    console.log("prueba",tempSelectedPage)
+    // this.observableService.setPage(tempSelectedPage)
   }
 
 }

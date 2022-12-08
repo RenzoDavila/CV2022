@@ -22,13 +22,4 @@ export class ContentComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  changeSelected(page: string, subPage: string, subPageItem: string){
-    let tempSelectedPage : InitPage = {
-      page: page,
-      subPage: subPage,
-      subPageItem: subPageItem,
-    };
-    this.observableService.setPage(tempSelectedPage)
-  }
 }

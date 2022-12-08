@@ -1,78 +1,26 @@
-<div class="row m-0" style="height: 50%; width: 100%;">
-  <div class="col-2 p-0 tec">
-    <img alt="experience" src="assets/icon/technologies/angular.svg" height="100%" width="100%">
+<div class="row m-0 decorations" [ngClass]="{'with-arrows' : decorationLength > 16}">
+  <div *ngFor="let item of decoration[decorationPag]"  class="col-3 p-0 tec">
+    <img alt="{{item.name}}" src="assets/icon/technologies/{{item.tag}}.svg" height="100%" width="100%">
   </div>
-  <div class="col-2 p-0 tec">
-    <img alt="experience" src="assets/icon/technologies/angular.svg" height="100%" width="100%">
-  </div>
-  <div class="col-2 p-0 tec">
-    <img alt="experience" src="assets/icon/technologies/angular.svg" height="100%" width="100%">
-  </div>
-  <div class="col-2 p-0 tec">
-    <img alt="experience" src="assets/icon/technologies/angular.svg" height="100%" width="100%">
-  </div>
-  <div class="col-2 p-0 tec">
-    <img alt="experience" src="assets/icon/technologies/angular.svg" height="100%" width="100%">
-  </div>
-  <div class="col-2 p-0 tec">
-    <img alt="experience" src="assets/icon/technologies/angular.svg" height="100%" width="100%">
-  </div>
-  <div class="col-2 p-0 tec">
-    <img alt="experience" src="assets/icon/technologies/angular.svg" height="100%" width="100%">
-  </div>
-  <div class="col-2 p-0 tec">
-    <img alt="experience" src="assets/icon/technologies/angular.svg" height="100%" width="100%">
-  </div>
-  <div class="col-2 p-0 tec">
-    <img alt="experience" src="assets/icon/technologies/angular.svg" height="100%" width="100%">
-  </div>
-  <div class="col-2 p-0 tec">
-    <img alt="experience" src="assets/icon/technologies/angular.svg" height="100%" width="100%">
-  </div>
-  <div class="col-2 p-0 tec">
-    <img alt="experience" src="assets/icon/technologies/angular.svg" height="100%" width="100%">
-  </div>
-  <div class="col-2 p-0 tec">
-    <img alt="experience" src="assets/icon/technologies/angular.svg" height="100%" width="100%">
-  </div>
-  <div class="col-2 p-0 tec">
-    <img alt="experience" src="assets/icon/technologies/angular.svg" height="100%" width="100%">
-  </div>
-  <div class="col-2 p-0 tec">
-    <img alt="experience" src="assets/icon/technologies/angular.svg" height="100%" width="100%">
-  </div>
-  <div class="col-2 p-0 tec">
-    <img alt="experience" src="assets/icon/technologies/angular.svg" height="100%" width="100%">
-  </div>
-  <div class="col-2 p-0 tec">
-    <img alt="experience" src="assets/icon/technologies/angular.svg" height="100%" width="100%">
-  </div>
-  <div class="col-2 p-0 tec">
-    <img alt="experience" src="assets/icon/technologies/angular.svg" height="100%" width="100%">
-  </div>
-  <div class="col-2 p-0 tec">
-    <img alt="experience" src="assets/icon/technologies/angular.svg" height="100%" width="100%">
-  </div>
-  <div class="col-2 p-0 tec">
-    <img alt="experience" src="assets/icon/technologies/angular.svg" height="100%" width="100%">
-  </div>
-  <div class="col-2 p-0 tec">
-    <img alt="experience" src="assets/icon/technologies/angular.svg" height="100%" width="100%">
-  </div>
-  <div class="col-2 p-0 tec">
-    <img alt="experience" src="assets/icon/technologies/angular.svg" height="100%" width="100%">
-  </div>
-  <div class="col-2 p-0 tec">
-    <img alt="experience" src="assets/icon/technologies/angular.svg" height="100%" width="100%">
-  </div>
-  <div class="col-2 p-0 tec">
-    <img alt="experience" src="assets/icon/technologies/angular.svg" height="100%" width="100%">
-  </div>
-  <div class="col-2 p-0 tec">
-    <img alt="experience" src="assets/icon/technologies/angular.svg" height="100%" width="100%">
-  </div>
+  <div class="col-12 p-0 tec"></div>
+  <div class="col-12 p-0 tec"></div>
+  <div class="col-12 p-0 tec"></div>
+  <div class="col-12 p-0 tec"></div>
 </div>
-<div class="row m-0" style="height: 50%; width: 100%;">
+
+<div *ngIf="decorationLength > 16" class="row pagination m-0">
+  <div *ngIf="this.decorationPag != 0" class="col-5 p-0 d-flex align-items-center justify-content-end arrow">
+    <img alt="anterior.svg" title="anterior" src="assets/icon/general/arrow-left.svg" (click)="changePag(-1)">
+  </div>
+  <div *ngIf="!(this.decorationPag != 0)" class="col-5 p-0 arrow"></div>
+  <div class="col-2 p-0 arrow"></div>
+  <div *ngIf="this.decorationPag != this.decorationPagination" class="col-5 p-0 d-flex align-items-center justify-content-start arrow">
+    <img alt="siguiente.svg" title="siguiente" src="assets/icon/general/arrow-right.svg" (click)="changePag(1)">
+  </div>
+  <div *ngIf="!(this.decorationPag != this.decorationPagination)" class="col-5 p-0 arrow"></div>
+</div>
+
+<div class="row m-0 worker">
   <div class="col-12 desk p-0">
     <img class="img" alt="experience" src="assets/icon/general/desk.svg">
     <img *ngIf="(selectedPage$ | async)?.page == 'main'" class="img" alt="main" src="assets/icon/screen/screen-main-{{(selectedPage$ | async)?.subPage}}.svg">

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { Objects } from 'src/app/functions/Objects';
 import { InitPage } from 'src/app/models/InitPage.model';
 import { ObservableService } from 'src/app/services/observable/observable.service';
 
@@ -84,17 +85,23 @@ export class SubMenuComponent implements OnInit {
   }
 
   itemSelected(multiple: boolean, page: string, subPage: string, subPageItem: string) {
+    let tempSelectedPage: InitPage = {
+      page: page,
+      subPage: subPage,
+      subPageItem: subPageItem,
+    };
+    if(!Objects.equal(this.selectedPage, tempSelectedPage))
+    {
+      this.observableService.setPage(tempSelectedPage)
+    }
     if (multiple) {
+      this.subMenuLength = 0
+      this.subMenuPagination = 0
+      this.subMenuPag = 0
+      this.subMenu = []
       this.subMenuExist = true
       this.selectedSubPage = subPage
       this.getSubMenu(subPage);
-    } else {
-      let tempSelectedPage: InitPage = {
-        page: page,
-        subPage: subPage,
-        subPageItem: subPageItem,
-      };
-      this.observableService.setPage(tempSelectedPage)
     }
   }
 
@@ -129,6 +136,15 @@ export class SubMenuComponent implements OnInit {
 
   changeSubPag(change: number) {
     this.subMenuPag = this.subMenuPag + change
+  }
+
+  backPag() {
+    this.subMenuExist = false
+    this.subMenuLength = 0
+    this.subMenuPagination = 0
+    this.subMenuPag = 0
+    this.subMenu = []
+    this.selectedSubPage = ''
   }
 
 }

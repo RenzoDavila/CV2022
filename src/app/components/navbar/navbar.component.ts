@@ -24,7 +24,7 @@ export class NavbarComponent implements OnInit {
     let tempSelectedPage : InitPage = {
       page: page,
       subPage: subPage,
-      subPageItem: 'main'
+      subPageItem: subPage
     };
     this.observableService.setPage(tempSelectedPage)
   }
