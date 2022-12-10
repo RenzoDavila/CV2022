@@ -19,7 +19,7 @@ export const DataExperience = [
     description: "ADIASOFT E.I.R.L.",
     ownLogo: true,
     multiple: false,
-    technologies: {all: false, used: []},
+    technologies: {all: false, used: [7,6,8]},
     subData: [{ name: "", tag: "", description: "", ownLogo: false }]
   },
   {
@@ -28,7 +28,7 @@ export const DataExperience = [
     description: "WEB CONTROL SYSTEMS PERU S.A.C.",
     ownLogo: true,
     multiple: false,
-    technologies: {all: false, used: []},
+    technologies: {all: false, used: [8,28,27,40]},
     subData: [{ name: "", tag: "", description: "", ownLogo: false }]
   },
   {
@@ -37,7 +37,7 @@ export const DataExperience = [
     description: "I.E.P. FRANCISCO ROJAS SCHOOL",
     ownLogo: true,
     multiple: false,
-    technologies: {all: false, used: []},
+    technologies: {all: false, used: [23,31,32]},
     subData: [{ name: "", tag: "", description: "", ownLogo: false }]
   },
   {
@@ -46,7 +46,7 @@ export const DataExperience = [
     description: "OROOPLEX",
     ownLogo: true,
     multiple: false,
-    technologies: {all: false, used: []},
+    technologies: {all: false, used: [7,3,13,21,2,4]},
     subData: [{ name: "", tag: "", description: "", ownLogo: false }]
   },
   {
@@ -55,7 +55,7 @@ export const DataExperience = [
     description: "ANDROMEDA.PE S.A.C.",
     ownLogo: true,
     multiple: false,
-    technologies: {all: false, used: []},
+    technologies: {all: false, used: [13,21]},
     subData: [{ name: "", tag: "", description: "", ownLogo: false }]
   },
   {
@@ -64,7 +64,7 @@ export const DataExperience = [
     description: "AUDITEL S.A.",
     ownLogo: true,
     multiple: false,
-    technologies: {all: false, used: []},
+    technologies: {all: false, used: [7,2,4,1,37]},
     subData: [{ name: "", tag: "", description: "", ownLogo: false }]
   },
 ]

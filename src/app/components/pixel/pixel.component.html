@@ -1,8 +1,7 @@
 <div class="row m-0 decorations" [ngClass]="{'with-arrows' : decorationLength > 16}">
   <div *ngFor="let item of decoration[decorationPag]"  class="col-3 p-0 tec">
-    <img alt="{{item.name}}" src="assets/icon/technologies/{{item.tag}}.svg" height="100%" width="100%">
+    <img title="{{item.name}}" alt="{{item.name}}" src="assets/icon/technologies/{{item.tag}}.svg" height="100%" width="100%">
   </div>
-  <div class="col-12 p-0 tec"></div>
   <div class="col-12 p-0 tec"></div>
   <div class="col-12 p-0 tec"></div>
   <div class="col-12 p-0 tec"></div>
