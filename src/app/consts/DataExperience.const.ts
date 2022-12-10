@@ -7,10 +7,10 @@ export const DataExperience = [
     multiple: true,
     technologies: {all: false, used: [6,15,3,4,9,21,11,22,18,35]},
     subData: [
-      { name: "RENFE", tag: "renfe", description: "RENFE", ownLogo: false, technologies: {all: false, used: [6,3]} },
-      { name: "DATADIS", tag: "datadis", description: "DATADIS", ownLogo: false, technologies: {all: false, used: [6,15,3]} },
-      { name: "REE", tag: "ree", description: "RED ELECTRICA DE ESPAÑA", technologies: {all: false, used: [4,9,21,11,22]} },
-      { name: "SILVERLIGHT", tag: "silverlight", description: "SILVERLIGHT", ownLogo: false, technologies: {all: false, used: [3,18,35]} },
+      { name: "RENFE", tag: "renfe", description: "RENFE", ownLogo: true, technologies: {all: false, used: [6,3]} },
+      { name: "DATADIS", tag: "datadis", description: "DATADIS", ownLogo: true, technologies: {all: false, used: [6,15,3]} },
+      { name: "REE", tag: "ree", description: "RED ELECTRICA DE ESPAÑA", ownLogo: true, technologies: {all: false, used: [4,9,21,11,22]} },
+      { name: "IBOST", tag: "ibost", description: "IBOST(SILVERLIGHT)", ownLogo: true, technologies: {all: false, used: [3,18,35]} },
     ]
   },
   {

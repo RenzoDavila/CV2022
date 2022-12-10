@@ -24,6 +24,9 @@ export class PixelComponent implements OnInit {
   @Input() projects: any
   @Input() studies: any
   technologies = DataTechnologies
+  urlScreen = 'assets/icon/screens/'
+  screen = this.urlScreen + 'screen-main-main.svg'
+  subScreen = this.urlScreen + 'sub-screen-main-main.svg'
 
   constructor(private observableService: ObservableService,) { }
 
@@ -34,8 +37,18 @@ export class PixelComponent implements OnInit {
       this.decorationPagination = 0
       this.decorationPag = 0
       this.decoration = []
+      this.screen = this.urlScreen + 'screen-main-main.svg'
+      this.subScreen = this.urlScreen + 'sub-screen-main-main.svg'
       this.getDecorations();
+      this.getScreens();
     });
+  }
+
+  getScreens() {
+    this.screen = this.urlScreen + 'screen-' + this.selectedPage.page + '-' + this.selectedPage.subPage + '.svg'
+    if(this.selectedPage.subPage != this.selectedPage.subPageItem){
+      this.subScreen = this.urlScreen + 'sub-screen-' + this.selectedPage.page + '-' + this.selectedPage.subPageItem + '.svg'
+    }
   }
 
   getDecorations() {
