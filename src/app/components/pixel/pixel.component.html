@@ -21,9 +21,25 @@
 
 <div class="row m-0 worker">
   <div class="col-12 desk p-0">
-    <img class="img" alt="experience" src="assets/icon/general/desk.svg">
-    <img alt="{{(selectedPage$ | async)?.subPage}}" class="img" src="{{screen}}">
-    <img alt="{{(selectedPage$ | async)?.subPageItem}}" class="img" src="{{subScreen}}">
-    <img class="img" alt="experience" src="assets/icon/general/me.svg">
+    <img class="img" alt="desk" src="assets/icon/general/desk.svg">
+    <img class="img" alt="{{(selectedPage$ | async)?.subPage}}" src="{{screen}}">
+    <img class="img" alt="{{(selectedPage$ | async)?.subPageItem}}" src="{{subScreen}}">
+    <div *ngIf="!working">
+      <img class="img" alt="chair" src="assets/icon/general/chair.svg">
+      <img class="img opacity-animation" alt="text-balloon" src="assets/icon/texts-balloons/text-box.svg">
+    </div>
+    <div *ngIf="working">
+      <img class="img" alt="me" src="assets/icon/general/me.svg">
+      <img class="img opacity-animation" alt="text-balloon" src="assets/icon/texts-balloons/text-balloon.svg">
+    </div>
+    <img class="img opacity-animation" alt="text-balloon" src="assets/icon/texts-balloons/text-sm-es-click.svg">
   </div>
 </div>
+
+
+<!-- <div class="row m-0 text-background"></div> -->
+<!-- <div class="row m-0 text-space">
+  <div class="col-12 m-0 text-box">
+    <img class="img-text-box" alt="text-balloon" src="assets/icon/texts-boxes/text-box-xl.svg">
+  </div>
+</div> -->

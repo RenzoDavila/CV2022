@@ -37,6 +37,28 @@
   height: 12vh
   font-size: 14vh
 
+.opacity-animation
+  animation: opacity 4s linear infinite alternate
+
+.text-background
+  position: relative
+  margin-top: -90vh !important
+  // position: absolute
+  // top: 0px
+  background-color: black
+  opacity: 0.5
+  height: 102%
+  width: 100%
+
+.text-space
+  height: 100%
+  position: relative
+  margin-top: -90vh !important
+
+.img-text-box
+  width: 100%
+  height: 100%
+
 .arrow
   height: 100%
   padding: 4px !important
@@ -69,8 +91,32 @@
     transform: scale(1.3)
   80%
     transform: scale(1.2)
-  00%
+  90%
     transform: scale(1.1)
   100%
     transform: scale(1)
 
+
+@keyframes opacity
+  0%
+    opacity: 0
+  10%
+    opacity: 0
+  20%
+    opacity: 0
+  30%
+    opacity: 1
+  40%
+    opacity: 1
+  50%
+    opacity: 1
+  60%
+    opacity: 1
+  70%
+    opacity: 1
+  80%
+    opacity: 0
+  90%
+    opacity: 0
+  100%
+    opacity: 0

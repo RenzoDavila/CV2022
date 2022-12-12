@@ -27,10 +27,18 @@ export class PixelComponent implements OnInit {
   urlScreen = 'assets/icon/screens/'
   screen = this.urlScreen + 'screen-main-main.svg'
   subScreen = this.urlScreen + 'sub-screen-main-main.svg'
+  working = true
 
   constructor(private observableService: ObservableService,) { }
 
   ngOnInit(): void {
+    let randomVar = Math.floor(Math.random() * 2);
+    if(randomVar == 0){
+      this.working = false
+    }else{
+      this.working = true
+    }
+
     this.selectedPage$.subscribe((selectedPage) => {
       console.log("selectedPage", selectedPage)
       this.selectedPage = selectedPage
