@@ -13,7 +13,8 @@ export class PixelComponent implements OnInit {
   selectedPage: InitPage = {
     page: '',
     subPage: '',
-    subPageItem: ''
+    subPageItem: '',
+    textBox: false,
   }
   decorationLength = 0
   decorationPagination = 0
@@ -40,7 +41,7 @@ export class PixelComponent implements OnInit {
     }
 
     this.selectedPage$.subscribe((selectedPage) => {
-      console.log("selectedPage", selectedPage)
+      console.log("selectedPage",selectedPage)
       this.selectedPage = selectedPage
       this.decorationPagination = 0
       this.decorationPag = 0
@@ -119,6 +120,16 @@ export class PixelComponent implements OnInit {
 
   changePag(change: number) {
     this.decorationPag = this.decorationPag + change
+  }
+
+  openTextBox(){
+    let tempSelectedPage : InitPage = {
+      page: this.selectedPage.page,
+      subPage: this.selectedPage.subPage,
+      subPageItem: this.selectedPage.subPageItem,
+      textBox: true,
+    };
+    this.observableService.setPage(tempSelectedPage)
   }
 
 }

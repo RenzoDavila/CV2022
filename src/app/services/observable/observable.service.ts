@@ -6,6 +6,7 @@ const initPage: InitPage = {
   page: 'main',
   subPage: 'main',
   subPageItem: 'main',
+  textBox: false,
 };
 
 @Injectable({

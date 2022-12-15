@@ -17,7 +17,8 @@ export class SidebarComponent implements OnInit {
   selectedPage: InitPage = {
     page: '',
     subPage: '',
-    subPageItem: ''
+    subPageItem: '',
+    textBox: false,
   }
   @Input() main: any
   @Input() experience: any
@@ -55,18 +56,8 @@ export class SidebarComponent implements OnInit {
       page: page,
       subPage: subPage,
       subPageItem: subPageItem,
+      textBox: false,
     };
     this.observableService.setPage(tempSelectedPage)
   }
-
-  prueba(page: string, subPage: string, subPageItem: string){
-    let tempSelectedPage : InitPage = {
-      page: page,
-      subPage: subPage,
-      subPageItem: subPageItem,
-    };
-    console.log("prueba",tempSelectedPage)
-    // this.observableService.setPage(tempSelectedPage)
-  }
-
 }

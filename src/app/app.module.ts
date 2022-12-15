@@ -8,6 +8,7 @@ import { ContentComponent } from './components/content/content.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { PixelComponent } from './components/pixel/pixel.component';
 import { SubMenuComponent } from './components/sub-menu/sub-menu.component';
+import { TextBoxComponent } from './components/text-box/text-box.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SubMenuComponent } from './components/sub-menu/sub-menu.component';
     ContentComponent,
     SidebarComponent,
     PixelComponent,
-    SubMenuComponent
+    SubMenuComponent,
+    TextBoxComponent
   ],
   imports: [
     BrowserModule,

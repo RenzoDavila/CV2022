@@ -13,7 +13,8 @@ export class SubMenuComponent implements OnInit {
   selectedPage: InitPage = {
     page: '',
     subPage: '',
-    subPageItem: ''
+    subPageItem: '',
+    textBox: false,
   }
   menuLength = 0
   menuPagination = 0
@@ -89,6 +90,7 @@ export class SubMenuComponent implements OnInit {
       page: page,
       subPage: subPage,
       subPageItem: subPageItem,
+      textBox: false,
     };
     if(!Objects.equal(this.selectedPage, tempSelectedPage))
     {
