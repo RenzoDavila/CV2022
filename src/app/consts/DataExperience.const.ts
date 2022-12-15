@@ -1,8 +1,8 @@
 export const DataExperience = [
   {
-    name: "NTTDATA",
+    name: "NTT DATA",
     tag: "nttdata",
-    description: "NTTDATA",
+    description: "NTT DATA EUROPE & LATAM",
     ownLogo: true, //si se pone false el por defecto es icon/experience/experience.svg
     multiple: true,
     technologies: {all: false, used: [6,15,3,4,9,21,11,22,18,35]},

@@ -1,9 +1,9 @@
 <div class="sidebar d-flex flex-column flex-shrink-0 p-3 text-white bg-dark">
   <ul class="nav nav-pills flex-column mb-auto">
-    <div id="sidebar">
+    <div id="sidebar" class="sidebar-row">
       <div *ngFor="let item of menu" class="sidebar-row">
         <li class="nav-item" title="{{item.name}}" [ngClass]="{'active' : (selectedPage$ | async)?.subPage == item.tag}">
-          <a class="nav-link text-white" [ngClass]="{'dropdown-toggle' : item.multiple}" id="flush-{{item.tag}}" data-bs-toggle="collapse" [attr.data-bs-target]="'#'+item.tag" aria-expanded="false" [attr.aria-controls]="item.tag" (click)="changeSelected(selectedPage.page, item.tag, item.tag)">
+          <a class="nav-link text-white ellipsis" [ngClass]="{'dropdown-toggle' : item.multiple}" id="flush-{{item.tag}}" data-bs-toggle="collapse" [attr.data-bs-target]="'#'+item.tag" aria-expanded="false" [attr.aria-controls]="item.tag" (click)="changeSelected(selectedPage.page, item.tag, item.tag)">
             <img *ngIf="!item.ownLogo" alt="{{selectedPage.page}}.svg" title="{{item.name}}" src="assets/icon/{{selectedPage.page}}/{{selectedPage.page}}.svg" height="16">
             <img *ngIf="item.ownLogo" alt="{{item.tag}}.svg" title="{{item.name}}" src="assets/icon/{{selectedPage.page}}/{{item.tag}}.svg" height="16">
             {{item.description}}
