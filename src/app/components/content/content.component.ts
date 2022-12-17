@@ -21,5 +21,16 @@ export class ContentComponent implements OnInit {
   constructor(private observableService: ObservableService) { }
 
   ngOnInit(): void {
+    this.selectedPage$.subscribe((selectedPage) => {
+      this.goToTop()
+    });
+  }
+
+  goToTop() {
+    window.scroll({
+      top: -1000,
+      left: 0,
+      behavior: 'smooth'
+    });
   }
 }

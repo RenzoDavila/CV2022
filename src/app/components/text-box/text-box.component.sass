@@ -10,19 +10,20 @@
   padding: 2% !important
 
 .img-text-box
-  width: 96%
-  height: 92vh !important
+  width: 98%
+  height: 88vh !important
   position: absolute
   background-repeat: no-repeat
   background-size: 100% 100%
+  margin-top: 54px
 
 .text-box
   overflow-x: hidden !important
   position: absolute
-  height: 86vh !important
+  height: 82vh !important
   overflow: scroll
-  margin-top: 20px
-  width: 96%
+  width: 98%
+  margin-top: 54px
 
 .text-box::-webkit-scrollbar
   display: none
@@ -33,6 +34,8 @@
 
 .row-back
   height: 10%
+
+.arrow-w
   width: 100%
 
 .arrow
@@ -56,11 +59,21 @@
   height: 100% !important
 
 .move
-  width: 10%
+  width: 18%
+
+.w-100
+  width: 100% !important
+
+.pointer
+  cursor: pointer
 
 @media screen and (max-width: 768px)
   .img-text-box
     background-image: url( '../../../assets/icon/texts-boxes/text-box-y.png')
+  .move
+    width: 40%
+  // .arrow-w
+  //   width: 50%
 
 @media screen and (min-width: 769px)
   .img-text-box

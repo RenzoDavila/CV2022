@@ -1,22 +1,25 @@
+<div class="arrow-down-up">
+  <img alt="up.svg" title="up" src="assets/icon/general/up.svg" (click)="goToArrow()">
+  <img alt="down.svg" title="down" src="assets/icon/general/down.svg" (click)="goToArrow()">
+</div>
 
-<div id="menuReal" class="col-12"></div>
 <div *ngIf="!subMenuExist" class="row m-0">
   <div class="row m-0" [ngClass]="{'principal' : menuLength > 4}">
-    <div *ngFor="let item of menu[menuPag]" class="col-6 p-0 tec" (click)="itemSelected(item.multiple, selectedPage.page, item.tag, item.tag)">
+    <div *ngFor="let item of menu[menuPag]" class="col-6 p-0 tec">
       <div class="img-text">{{item.description}}</div>
-      <img *ngIf="!item.ownLogo" alt="{{selectedPage.page}}.svg" title="{{item.name}}" src="assets/icon/{{selectedPage.page}}/{{selectedPage.page}}.svg">
-      <img *ngIf="item.ownLogo" alt="{{item.tag}}.svg" title="{{item.name}}" src="assets/icon/{{selectedPage.page}}/{{item.tag}}.svg">
+      <img class="pointer" (click)="itemSelected(item.multiple, selectedPage.page, item.tag, item.tag, item.description)" *ngIf="!item.ownLogo" alt="{{selectedPage.page}}.svg" title="{{item.name}}" src="assets/icon/{{selectedPage.page}}/{{selectedPage.page}}.svg">
+      <img class="pointer" (click)="itemSelected(item.multiple, selectedPage.page, item.tag, item.tag, item.description)" *ngIf="item.ownLogo" alt="{{item.tag}}.svg" title="{{item.name}}" src="assets/icon/{{selectedPage.page}}/{{item.tag}}.svg">
     </div>
   </div>
   <div  *ngIf="menuLength > 4" class="row pagination m-0">
-    <div *ngIf="this.menuPag != 0" class="col-2 p-0 d-flex align-items-center justify-content-end arrow" (click)="changePag(-1)">
+    <div *ngIf="this.menuPag != 0" class="col-2 p-0 d-flex align-items-center justify-content-end arrow pointer" (click)="changePag(-1)">
       <img alt="anterior.svg" title="anterior" src="assets/icon/general/arrow-left.svg">
     </div>
     <div *ngIf="!(this.menuPag != 0)" class="col-2 p-0 arrow"></div>
     <div class="col-8 p-0 pagination-text container d-flex align-items-center justify-content-center">
       {{menuPag + 1}}/{{menuPagination + 1}}
     </div>
-    <div *ngIf="this.menuPag != this.menuPagination" class="col-2 p-0 d-flex align-items-center justify-content-start arrow" (click)="changePag(1)">
+    <div *ngIf="this.menuPag != this.menuPagination" class="col-2 p-0 d-flex align-items-center justify-content-start arrow pointer" (click)="changePag(1)">
       <img alt="siguiente.svg" title="siguiente" src="assets/icon/general/arrow-right.svg">
     </div>
     <div *ngIf="!(this.menuPag != this.menuPagination)" class="col-2 p-0 arrow"></div>
@@ -25,17 +28,17 @@
 
 <div *ngIf="subMenuExist" class="row m-0">
   <div class="row row-back m-0">
-    <div class="col-2 p-0 arrow" (click)="backPag()">
+    <div class="col-2 p-0 arrow-back" (click)="backPag()">
       <img alt="atras.svg" title="atras" src="assets/icon/general/arrow-back.svg">
     </div>
-    <div class="col title">{{selectedSubPage}}</div>
+    <div class="col title">{{titleSubMenu}}</div>
     <div class="col-2 p-0 arrow"></div>
   </div>
   <div class="row row-subMenu m-0" [ngClass]="{'principal-subMenu' : subMenuLength > 4}">
-    <div *ngFor="let item of subMenu[subMenuPag]" class="col-6 p-0 tec" (click)="itemSelected(false, selectedPage.page, selectedSubPage, item.tag)">
+    <div *ngFor="let item of subMenu[subMenuPag]" class="col-6 p-0 tec">
       <div class="img-text">{{item.description}}</div>
-      <img *ngIf="!item.ownLogo" alt="{{selectedPage.page}}.svg" title="{{item.name}}" src="assets/icon/{{selectedPage.page}}/{{selectedPage.page}}.svg">
-      <img *ngIf="item.ownLogo" alt="{{item.tag}}.svg" title="{{item.name}}" src="assets/icon/{{selectedPage.page}}/{{item.tag}}.svg">
+      <img class="pointer" (click)="itemSelected(false, selectedPage.page, selectedSubPage, item.tag, item.description)" *ngIf="!item.ownLogo" alt="{{selectedPage.page}}.svg" title="{{item.name}}" src="assets/icon/{{selectedPage.page}}/{{selectedPage.page}}.svg">
+      <img class="pointer" (click)="itemSelected(false, selectedPage.page, selectedSubPage, item.tag, item.description)" *ngIf="item.ownLogo" alt="{{item.tag}}.svg" title="{{item.name}}" src="assets/icon/{{selectedPage.page}}/{{item.tag}}.svg">
     </div>
   </div>
   <div class="row pagination m-0">

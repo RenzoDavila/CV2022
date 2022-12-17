@@ -30,6 +30,7 @@ export class SubMenuComponent implements OnInit {
   @Input() experience: any
   @Input() projects: any
   @Input() studies: any
+  titleSubMenu = ""
 
   constructor(private observableService: ObservableService,) { }
 
@@ -85,7 +86,8 @@ export class SubMenuComponent implements OnInit {
     this.menu = menuTemp
   }
 
-  itemSelected(multiple: boolean, page: string, subPage: string, subPageItem: string) {
+  itemSelected(multiple: boolean, page: string, subPage: string, subPageItem: string, titleSubMenu: string) {
+    this.titleSubMenu = titleSubMenu
     let tempSelectedPage: InitPage = {
       page: page,
       subPage: subPage,
@@ -104,6 +106,8 @@ export class SubMenuComponent implements OnInit {
       this.subMenuExist = true
       this.selectedSubPage = subPage
       this.getSubMenu(subPage);
+    }else{
+      this.goToBottom()
     }
   }
 
@@ -147,6 +151,32 @@ export class SubMenuComponent implements OnInit {
     this.subMenuPag = 0
     this.subMenu = []
     this.selectedSubPage = ''
+  }
+
+  goToArrow(){
+    var limit = (Math.max( document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight))/4
+    if(window.scrollY > limit){
+      this.goToTop()
+    }else{
+      this.goToBottom()
+    }
+  }
+
+  goToBottom() {
+    var limit = (Math.max( document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight))
+    window.scroll({
+      top: limit,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
+
+  goToTop() {
+    window.scroll({
+      top: -1000,
+      left: 0,
+      behavior: 'smooth'
+    });
   }
 
 }

@@ -103,6 +103,7 @@ export class PixelComponent implements OnInit {
 
     let cont = 0
     let tempList: any[] = []
+
     viewList.map((item: any) => {
       tempList.push(item)
       cont = cont + 1
@@ -112,7 +113,10 @@ export class PixelComponent implements OnInit {
         cont = 0
       }
     });
-    viewTemp.push(tempList)
+
+    if(tempList.length != 0){
+      viewTemp.push(tempList)
+    }
 
     this.decorationPagination = viewTemp.length - 1
     this.decoration = viewTemp
@@ -131,5 +135,4 @@ export class PixelComponent implements OnInit {
     };
     this.observableService.setPage(tempSelectedPage)
   }
-
 }

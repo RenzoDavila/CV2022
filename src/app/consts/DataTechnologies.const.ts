@@ -1,4 +1,4 @@
-export const DataTechnologies = [
+export const DataTechnologies = [ //el ultimo es el 48
   { id:1, name: "MONGO DB", tag: "mongo-db" },
   { id:2, name: "EXPRESS JS", tag: "express" },
   { id:3, name: "ANGULAR", tag: "angular" },
@@ -19,6 +19,8 @@ export const DataTechnologies = [
   { id:18, name: "JEST JS", tag: "jest" },
   { id:19, name: "SPRING", tag: "spring" },
   { id:20, name: "POSTMAN", tag: "postman" },
+  { id:47, name: "FIGMA", tag: "figma" },
+  { id:48, name: "NEST JS", tag: "nestjs" },
   { id:39, name: "SASS", tag: "sass" },
   { id:40, name: ".NET CORE", tag: "core" },
   { id:28, name: "VISUAL BASIC SCRIPT", tag: "vbscript" },

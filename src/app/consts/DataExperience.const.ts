@@ -5,10 +5,10 @@ export const DataExperience = [
     description: "NTT DATA EUROPE & LATAM",
     ownLogo: true, //si se pone false el por defecto es icon/experience/experience.svg
     multiple: true,
-    technologies: {all: false, used: [6,15,3,4,9,21,11,22,18,35]},
+    technologies: {all: false, used: [6,15,3,4,9,21,11,22,18,35,36,47,42,41,43,45]},
     subData: [
-      { name: "RENFE", tag: "renfe", description: "RENFE", ownLogo: true, technologies: {all: false, used: [6,3]} },
-      { name: "DATADIS", tag: "datadis", description: "DATADIS", ownLogo: true, technologies: {all: false, used: [6,15,3]} },
+      { name: "RENFE", tag: "renfe", description: "RENFE", ownLogo: true, technologies: {all: false, used: [19,3]} },
+      { name: "DATADIS", tag: "datadis", description: "DATADIS", ownLogo: true, technologies: {all: false, used: [6,15,3,47,43,41]} },
       { name: "REE", tag: "ree", description: "RED ELECTRICA DE ESPAÑA", ownLogo: true, technologies: {all: false, used: [4,9,21,11,22]} },
       { name: "IBOST", tag: "ibost", description: "IBOST(SILVERLIGHT)", ownLogo: true, technologies: {all: false, used: [3,18,35]} },
     ]

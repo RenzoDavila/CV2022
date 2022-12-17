@@ -1,29 +1,58 @@
 <div class="col-12 px-0 text-center themed-grid-col h-100 text-background"></div>
 <div class="col-12 px-0 text-center themed-grid-col h-100 d-flex align-items-center justify-content-center text-space">
-  <div class="col-12 px-0 text-center themed-grid-col h-100 img-text-box"></div>
-  <div class="col-12 px-0 text-center themed-grid-col h-100 text-box">
+  <div class="px-0 text-center themed-grid-col h-100 img-text-box"></div>
+  <div class="px-0 text-center themed-grid-col h-100 text-box">
 
-    <div class="row row-back p-0 m-0 d-flex align-items-center justify-content-center">
-      <div class="col-2 arrow d-flex align-items-center justify-content-center cero opacity-animation" (click)="backPag()">
-        <img alt="atras.svg" title="atras" src="assets/icon/general/arrow-back.svg">
+    <div class="row row-back p-0 m-4 mt-0 mb-0 d-flex align-items-center justify-content-center">
+      <div class="col-6 arrow d-flex align-items-center justify-content-start cero">
+        <img *ngIf="(selectedPage$ | async)?.subPage != (selectedPage$ | async)?.subPageItem" alt="{{(selectedPage$ | async)?.subPage}}.svg" title="{{(selectedPage$ | async)?.subPage}}" src="assets/icon/{{(selectedPage$ | async)?.page}}/{{(selectedPage$ | async)?.subPage}}.svg">
+        <img class="ms-4" alt="{{(selectedPage$ | async)?.subPageItem}}.svg" title="{{(selectedPage$ | async)?.subPageItem}}" src="assets/icon/{{(selectedPage$ | async)?.page}}/{{(selectedPage$ | async)?.subPageItem}}.svg">
       </div>
-      <div class="col-8"></div>
-      <div class="col-2 arrow d-flex align-items-center justify-content-center cero">
-        <img alt="logo.svg" title="logo" src="assets/icon/main/main.svg">
+      <div class="col-6 arrow d-flex align-items-center justify-content-end cero opacity-animation">
+        <img class="pointer" alt="close.svg" title="close" src="assets/icon/general/close.svg"  (click)="close()">
       </div>
     </div>
 
-    <div class="position-relative overflow-hidden p-4 m-3 mt-0 pt-0 mb-0 pb-0 text-center bg-transparent">
+    <div *ngIf="this.whitOutInfo" class="position-relative overflow-hidden p-4 m-3 mt-0 pt-0 mb-0 pb-0 text-center bg-transparent">
       <div class="mx-auto">
-        <h1 class="display-4 fw-normal">NTT DATA Europe & LATAM</h1>
-        <h2 class="display-8 fw-normal">Desarrollador Full stack (Julio 2021 - presente)</h2>
-        <p class="lead fw-normal">Empresa que brinda servicios de TI y consultoría de TI</p>
+        <h1 class="display-4 fw-normal">Sin Información</h1>
+      </div>
+    </div>
+
+    <div *ngIf="!this.whitOutInfo" class="position-relative overflow-hidden p-4 m-3 mt-0 pt-0 mb-0 pb-0 text-center bg-transparent">
+      <div class="mx-auto">
+        <h1 class="display-4 fw-normal">{{info.title}}</h1>
+        <h2 class="display-8 fw-normal">{{info.position}} ({{info.date}})</h2>
+        <hr>
+        <p class="lead fw-normal text-start" *ngFor="let item of info.description">{{item}}</p>
       </div>
       <div class="product-device shadow-sm d-none d-md-block"></div>
       <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
     </div>
 
-    <div class="d-md-flex p-4 m-3 mt-0 pt-0 mb-0 pb-0">
+    <div *ngIf="!this.whitOutInfo && !info.sub" class="d-md-flex p-4 m-3 mt-0 pt-0 mb-0 pb-0 w-100">
+      <div class="row w-100">
+        <div class="col-12 bg-transparent p-2 pt-0 pb-0 text-center overflow-hidden" style="border-radius: 21px 0 0 0;">
+          <div class="p-1">
+            <p class="lead fw-normal text-start">Tareas:</p>
+              <p class="text-start ps-5" *ngFor="let item of info.tasks">•  {{item}}</p>
+          </div>
+        </div>
+        <div class="col-12 bg-transparent p-1 pb-0 text-center overflow-hidden d-flex align-items-center justify-content-center">
+          <div class="ps-0 ps-lg-3 d-flex align-items-center justify-content-center expand-animation move">
+            <img class="pointer arrow-w" alt="atras.svg" title="atras" src="assets/icon/general/arrow-left.svg" (click)="arrowClick(-1)">
+          </div>
+          <div class="bg-transparent shadow-sm mx-auto d-flex align-items-center justify-content-center">
+            <img alt="logo.svg" title="logo" src="assets/img/{{(selectedPage$ | async)?.page}}/{{info.id}}{{imageNum}}.jpg" width="100%">
+          </div>
+          <div class="pe-0 pe-lg-3 d-flex align-items-center justify-content-center expand-animation move">
+            <img class="pointer arrow-w" alt="atras.svg" title="atras" src="assets/icon/general/arrow-right.svg" (click)="arrowClick(1)">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!this.whitOutInfo && info.sub" class="d-md-flex p-4 m-3 mt-0 pt-0 mb-0 pb-0">
       <div class="bg-dark p-1 pb-0 text-center text-white overflow-hidden w-50" style="border-radius: 21px 0 0 0;">
         <div class="p-1">
           <h2 class="display-5">DATADIS</h2>
@@ -44,40 +73,6 @@
         <div class="d-flex align-items-center justify-content-center expand-animation move">
           <img alt="atras.svg" title="atras" src="assets/icon/general/arrow-right.svg">
         </div>
-      </div>
-    </div>
-
-    <div class="d-md-flex p-4 m-3 mt-0 pt-0 mb-0 pb-0">
-      <div class="bg-light p-1 pb-0 text-center overflow-hidden w-50">
-        <div class="p-1">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-      </div>
-      <div class="bg-dark p-1 pb-0 text-center text-white overflow-hidden w-50">
-        <div class="p-1">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-      </div>
-    </div>
-
-    <div class="d-md-flex p-4 m-3 mt-0 pt-0 ">
-      <div class="bg-dark p-1 pb-0 text-center text-white overflow-hidden w-50" style="border-radius: 0 0 0 21px;">
-        <div class="p-1">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-      </div>
-      <div class="bg-light p-1 pb-0 text-center overflow-hidden w-50" style="border-radius: 0 0 21px 0;">
-        <div class="p-1">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
       </div>
     </div>
 
