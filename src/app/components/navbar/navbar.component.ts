@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { InitPage } from 'src/app/models/InitPage.model';
 import { ObservableService } from 'src/app/services/observable/observable.service';
 
@@ -16,7 +17,7 @@ export class NavbarComponent implements OnInit {
   };
   languaje:string = 'Español'
 
-  constructor(private observableService: ObservableService) {}
+  constructor(private observableService: ObservableService, public translate: TranslateService) {}
 
   ngOnInit(): void {
     this.observableService.selectedPage$.subscribe((page:InitPage) => this.selectedPage = page)
@@ -36,15 +37,9 @@ export class NavbarComponent implements OnInit {
     console.log("Estamos Descargando el CV")
   }
 
-  changeLanguage(lang: string){
-    switch (lang) {
-      case 'ENG':
-        this.languaje = 'English'
-      break;
-      case 'ESP':
-        this.languaje = 'Español'
-      break;
-    }
+  switchLang(lang: string) {
+    console.log("trans", this.translate.currentLang)
+    this.translate.use(lang);
   }
 
 }

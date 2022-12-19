@@ -20,15 +20,18 @@
           <a class="nav-link">Descargar CV</a>
         </li>
       </ul>
-    </div>
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-        {{languaje}}
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li><a class="dropdown-item" (click)="changeLanguage('ESP')">ESP</a></li>
-        <li><a class="dropdown-item" (click)="changeLanguage('ENG')">ENG</a></li>
-      </ul>
+      <span class="form-inline">
+        <select
+            class="form-control lang"
+            #selectedLang
+            (change)="switchLang(selectedLang.value)">
+          <option *ngFor="let language of translate.getLangs()"
+            [value]="language"
+            [selected]="language === translate.currentLang">
+            {{language | uppercase}}
+          </option>
+        </select>
+      </span>
     </div>
   </div>
 </nav>
