@@ -29,6 +29,9 @@ export class PixelComponent implements OnInit {
   screen = this.urlScreen + 'screen-main-main.svg'
   subScreen = this.urlScreen + 'sub-screen-main-main.svg'
   working = true
+  tecInfo = false
+  tecInfoName:string = ""
+  tecInfoDescription:string[] = [""]
 
   constructor(private observableService: ObservableService,) { }
 
@@ -134,5 +137,15 @@ export class PixelComponent implements OnInit {
       textBox: true,
     };
     this.observableService.setPage(tempSelectedPage)
+  }
+
+  closeTecInfo() {
+    this.tecInfo = false
+  }
+
+  openTecInfo(name:string, description:string[]) {
+    this.tecInfoName = name
+    this.tecInfoDescription = description
+    this.tecInfo = true
   }
 }

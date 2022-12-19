@@ -20,6 +20,7 @@ export class TextBoxComponent implements OnInit {
   info:any = []
   whitOutInfo:boolean = false
   imageNum: number = 1
+  subSections:any = []
 
   constructor(private observableService: ObservableService,) { }
 
@@ -31,12 +32,21 @@ export class TextBoxComponent implements OnInit {
   }
 
   getInfo(){
+    this.subSections = []
     const getInfo = this.infoExperience.find((x:any) => x.id == this.selectedPage.subPageItem)
     if(getInfo == undefined){
       this.whitOutInfo = true
     }else{
       this.whitOutInfo = false
       this.info = getInfo
+      if(this.info.sub){
+        this.info.sections.map((section: any) => {
+          console.log("section",section)
+          const getSection = this.infoExperience.find((x:any) => x.id == section)
+          this.subSections.push(getSection)
+        });
+      }
+      console.log("subSections",this.subSections)
     }
   }
 
@@ -67,6 +77,14 @@ export class TextBoxComponent implements OnInit {
       this.imageNum = 1
     }else if (this.imageNum < 1){
       this.imageNum = this.info.images
+    }
+  }
+
+  isPair(num: number){
+    if(num%2==0){
+      return true
+    }else{
+      return false
     }
   }
 

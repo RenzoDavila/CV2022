@@ -14,6 +14,7 @@ export class NavbarComponent implements OnInit {
     subPageItem: 'main',
     textBox: false,
   };
+  languaje:string = 'Español'
 
   constructor(private observableService: ObservableService) {}
 
@@ -33,6 +34,17 @@ export class NavbarComponent implements OnInit {
 
   downloadCV(){
     console.log("Estamos Descargando el CV")
+  }
+
+  changeLanguage(lang: string){
+    switch (lang) {
+      case 'ENG':
+        this.languaje = 'English'
+      break;
+      case 'ESP':
+        this.languaje = 'Español'
+      break;
+    }
   }
 
 }

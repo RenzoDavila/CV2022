@@ -1,6 +1,16 @@
+<div *ngIf="tecInfo" class="img-text-box"></div>
+<div *ngIf="tecInfo" class="text-box mx-auto">
+  <h1 class="display-8 fw-bold title">{{tecInfoName}}</h1>
+  <div class="paragraph">
+    <p *ngFor="let desc of tecInfoDescription">{{desc}}</p>
+  </div>
+  <button type="button" class="btn btn-success ok fw-bold" (click)="closeTecInfo()">OK</button>
+</div>
+
 <div class="row m-0 decorations" [ngClass]="{'with-arrows' : decorationLength > 16}">
   <div *ngFor="let item of decoration[decorationPag]"  class="col-3 p-0 tec">
-    <img title="{{item.name}}" alt="{{item.name}}" src="assets/icon/technologies/{{item.tag}}.svg" height="100%" width="100%">
+    <img *ngIf="(selectedPage$ | async)?.page == 'main'" class="pointer" title="{{item.name}}" alt="{{item.name}}" src="assets/icon/technologies/{{item.tag}}.svg" height="100%" width="100%" (click)="openTecInfo(item.name, item.description)">
+    <img *ngIf="(selectedPage$ | async)?.page != 'main'" title="{{item.name}}" alt="{{item.name}}" src="assets/icon/technologies/{{item.tag}}.svg" height="100%" width="100%">
   </div>
   <div class="col-12 p-0 tec"></div>
   <div class="col-12 p-0 tec"></div>

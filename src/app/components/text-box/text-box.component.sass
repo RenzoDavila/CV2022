@@ -10,6 +10,7 @@
   padding: 2% !important
 
 .img-text-box
+  z-index: 100
   width: 98%
   height: 88vh !important
   position: absolute
@@ -18,6 +19,7 @@
   margin-top: 54px
 
 .text-box
+  z-index: 101
   overflow-x: hidden !important
   position: absolute
   height: 82vh !important
@@ -67,6 +69,17 @@
 .pointer
   cursor: pointer
 
+.ok
+  position: relative
+  top: 30px
+  width: 90px
+
+.img-gallery
+  width: 80%
+  height: 300px
+  border-radius: 21px 21px 21px 21px
+  margin-bottom: 40px
+
 @media screen and (max-width: 768px)
   .img-text-box
     background-image: url( '../../../assets/icon/texts-boxes/text-box-y.png')
@@ -74,10 +87,33 @@
     width: 40%
   // .arrow-w
   //   width: 50%
+  .border-up
+    border-radius: 21px 21px 0 0
+  .border-down
+    border-radius: 0 0 21px 21px
+  .borderless-all
+    border-radius: 0 0 0 0
+  .bg-dark-m
+    position: relative
+    bottom: 2px
+    background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity)) !important
+  .bg-light-m
+    background-color: rgba(var(--bs-light-rgb),var(--bs-bg-opacity)) !important
+  // .bg-m
+  //   position: relative
+  //   bottom: 1px
 
-@media screen and (min-width: 769px)
+@media screen and (min-width: 768px)
   .img-text-box
     background-image: url( '../../../assets/icon/texts-boxes/text-box-x.png')
+  .border-up-left
+    border-radius: 21px 0 0 0
+  .border-up-right
+    border-radius: 0 21px 0 0
+  .border-down-right
+    border-radius: 0 0 21px 0
+  .border-down-left
+    border-radius: 0 0 0 21px
 
 @keyframes expand
   0%
