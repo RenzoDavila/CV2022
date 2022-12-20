@@ -9,5 +9,68 @@
     "mongodb1": "MongoDB is a distributed database at its core, so high availability, horizontal scaling, and geographic distribution are built in and easy to use.",
     "mongodb2": "MongoDB is free to use.",
     "express": "Express text ."
+  },
+  "info-exp":{
+    "full": "Full Stack Developer",
+    "front": "Front-End Developer",
+    "back": "Back-End Developer"
+  },
+  "nttdata":{
+    "date": "July 2021 - Present",
+    "desc1": "NTT DATA, part of the NTT Group, is one of the top 10 IT service providers globally.",
+    "desc2": "They offer consulting services, industry solutions, business process services, IT modernization, and managed services.",
+    "task1": "Backend development using Java Spring",
+    "task2": "Creation, maintenance and improvement of various components for the front-end using Angular11+",
+    "task3": "Development of microservices using Java Spring Boot",
+    "task4": "Container management using Docker",
+    "task5": "Creation and maintenance of various components for the front-end using Angular11+",
+    "task6": "Building microservices using node js with lambda functions - AWS",
+    "task7": "MySQL Database Management with RDS Service - AWS",
+    "task8": "Adding modules for the front-end using Lit-Html (JS)",
+    "task9": "Front-end recreation of the silverlight system using Angular11+",
+    "task10": "Module testing using jest.js",
+    "task11": "API REST consumption"
+  },
+  "renfe":{
+    "date": "November 2022 - Present",
+    "desc1": "Administration platform for railways and trains in Spain, including routes, loads, stations, etc.",
+    "desc2": "Technologies used: Java Spring - Angular14.",
+    "task1": "Backend development using Java Spring",
+    "task2": "Creation, maintenance and improvement of various components for the front-end using Angular14"
+  },
+  "datadis":{
+    "date": "February 2022 - October 2022",
+    "desc1": "It is an electricity consumption data platform that allows the administrator to view, add, edit and delete various companies and their electricity consumption to a database through an API and users in general to verify electricity consumption in various periods of time..",
+    "desc2": "Technologies used: Java Spring Boot - Docker - Angular13.",
+    "task1": "Development of microservices using Java Spring Boot",
+    "task2": "Container management using Docker",
+    "task3": "Creation and maintenance of various components for the front-end using Angular13"
+  },
+  "ree":{
+    "date": "December 2021 - January 2022",
+    "desc1": "Administrative system and dashboard for the electrical network of Spain.",
+    "desc2": "The system allows the general population to verify their electricity consumption through various graphs.",
+    "desc3": "Technologies used: Node js - lambda(AWS) -  RDS(AWS) - MySQL - LitHtml(JS).",
+    "task1": "Building microservices using node js with lambda functions - AWS",
+    "task2": "MySQL Database Management with RDS Service - AWS",
+    "task3": "Adding modules for the front-end using Lit-Html (JS)"
+  },
+  "ibost":{
+    "date": "July 2021 - November 2021",
+    "desc1": "The project consisted of migrating a Silverlight-based system to a new project using Angular11 technology.",
+    "desc2": "iBost is a company that is dedicated to the distribution of various electrical resistances and its system required an administration of orders and customers.",
+    "desc3": "Technologies used: jest.js - API REST - Angular11.",
+    "task1": "Front-end recreation of the silverlight system using Angular11",
+    "task2": "Module testing using jest.js",
+    "task3": "API REST consumption"
+  },
+  "adiasoft":{
+    "date": "January 2022 - April 2022",
+    "desc1": "It is an ERP environment sales software, for automated and administrative management for small and medium-sized companies.",
+    "desc2": "The project consisted of creating a platform oriented towards electronic invoicing that can be integrated into both old and current systems.",
+    "desc3": "Technologies used: Java Spring Boot - React - SQL server.",
+    "task1": "Adaptation of an Electronic Billing system using React",
+    "task2": "REST API development with Java Spring Boot",
+    "task3": "Creation of tables, triggers and indexes SQL server"
   }
 }
