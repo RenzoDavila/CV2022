@@ -38,6 +38,10 @@ export class PixelComponent implements OnInit {
   textBoxMessage = `text-sm-${this.language}-click`
   textBox:boolean = true
   textBoxClick:boolean = true
+  timeout1:any
+  timeout2:any
+  timeout3:any
+  timeout4:any
   @Output() message = new EventEmitter<string>();
   @Input()
   get externalMessage(): string {return this._externalMessage}
@@ -81,6 +85,10 @@ export class PixelComponent implements OnInit {
 
 
   changeTextBoxMessage(message?: string){
+    clearTimeout(this.timeout1);
+    clearTimeout(this.timeout2);
+    clearTimeout(this.timeout3);
+    clearTimeout(this.timeout4);
     if(this.textBoxClick){
       this.textBox = true
       this.textBoxMessage = `text-${this.language}-click`;
@@ -89,19 +97,19 @@ export class PixelComponent implements OnInit {
         case 'interesting':
           this.textBox = true
           this.textBoxMessage = `text-${this.language}-interesting`;
-          setTimeout(() => this.textBox = false, 6000);
+          this.timeout1 = setTimeout(() => this.textBox = false, 6000);
           break;
         case 'angular':
           this.textBox = true
           this.textBoxMessage = `text-${this.language}-angular`;
-          setTimeout(() => this.textBox = false, 6000);
+          this.timeout1 = setTimeout(() => this.textBox = false, 6000);
           break;
         case 'infoless':
           this.textBox = true;
           this.textBoxMessage = `text-${this.language}-infoless`;
-          setTimeout(() => this.textBoxMessage = `text-ellipsis`, 6000);
-          setTimeout(() => this.textBoxMessage = `text-${this.language}-embarrassing`, 12000);
-          setTimeout(() => this.textBox = false, 18000);
+          this.timeout1 = setTimeout(() => this.textBoxMessage = `text-ellipsis`, 6000);
+          this.timeout2 = setTimeout(() => this.textBoxMessage = `text-${this.language}-embarrassing`, 12000);
+          this.timeout3 = setTimeout(() => this.textBox = false, 18000);
           break;
         // default:
 
