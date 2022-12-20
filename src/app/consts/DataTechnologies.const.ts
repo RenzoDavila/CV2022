@@ -1,5 +1,5 @@
 export const DataTechnologies = [ //el ultimo es el 48
-  { id:1, name: "MONGO DB", tag: "mongo-db", description: ["MongoDB es una base de datos de documentos que ofrece una gran escalabilidad y flexibilidad, y un modelo de consultas e indexación avanzado."] },
+  { id:1, name: "MONGO DB", tag: "mongo-db", description: ["tec.mongodb1", "tec.mongodb2"] },
   { id:2, name: "EXPRESS JS", tag: "express", description: [""] },
   { id:3, name: "ANGULAR", tag: "angular", description: [""] },
   { id:4, name: "NODE JS", tag: "node", description: [""] },

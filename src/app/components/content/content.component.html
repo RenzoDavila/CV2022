@@ -8,10 +8,10 @@
     <app-sub-menu [studies]="studies" [projects]="projects" [experience]="experience" [main]="main"></app-sub-menu>
   </div>
   <div class="col-12 col-md-9 pt-3 px-0 text-center themed-grid-col h-100 section" style="background-color: #20375B">
-    <app-pixel [studies]="studies" [projects]="projects" [experience]="experience" [main]="main"></app-pixel>
+    <app-pixel (message)="message($event)" [externalMessage]="externalMessage" [studies]="studies" [projects]="projects" [experience]="experience" [main]="main"></app-pixel>
   </div>
 
   <div *ngIf="(selectedPage$ | async)?.textBox" class="col-12 px-0 text-center themed-grid-col h-100 box">
-    <app-text-box></app-text-box>
+    <app-text-box (message)="message($event)"></app-text-box>
   </div>
 </div>

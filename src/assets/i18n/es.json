@@ -1,4 +1,12 @@
 {
-  "title": "Este es un tecto para traducir",
-  "subtitle": "Este es un subtitulo"
+  "navbar":{
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "studies": "Estudios",
+    "download": "Descargar CV "
+  },
+  "tec":{
+    "mongodb1": "MongoDB es una base de datos de documentos que ofrece una gran escalabilidad y flexibilidad, y un modelo de consultas e indexación avanzado.",
+    "mongodb2": "MongoDB es de uso gratuito."
+  }
 }

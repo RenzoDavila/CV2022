@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { InfoExperience } from 'src/app/consts/InfoExperience.const';
 import { InitPage } from 'src/app/models/InitPage.model';
 import { ObservableService } from 'src/app/services/observable/observable.service';
@@ -9,6 +9,7 @@ import { ObservableService } from 'src/app/services/observable/observable.servic
   styleUrls: ['./text-box.component.sass']
 })
 export class TextBoxComponent implements OnInit {
+  @Output() message = new EventEmitter<string>();
   selectedPage$ = this.observableService.selectedPage$
   selectedPage: InitPage = {
     page: '',
@@ -41,12 +42,10 @@ export class TextBoxComponent implements OnInit {
       this.info = getInfo
       if(this.info.sub){
         this.info.sections.map((section: any) => {
-          console.log("section",section)
           const getSection = this.infoExperience.find((x:any) => x.id == section)
           this.subSections.push(getSection)
         });
       }
-      console.log("subSections",this.subSections)
     }
   }
 
@@ -59,6 +58,9 @@ export class TextBoxComponent implements OnInit {
     };
     this.observableService.setPage(tempSelectedPage)
     this.goToBottom()
+    if(this.whitOutInfo){
+      this.message.emit("infoless");
+    }
   }
 
   goToBottom() {

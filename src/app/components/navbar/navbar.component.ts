@@ -15,7 +15,6 @@ export class NavbarComponent implements OnInit {
     subPageItem: 'main',
     textBox: false,
   };
-  languaje:string = 'Español'
 
   constructor(private observableService: ObservableService, public translate: TranslateService) {}
 
@@ -38,7 +37,6 @@ export class NavbarComponent implements OnInit {
   }
 
   switchLang(lang: string) {
-    console.log("trans", this.translate.currentLang)
     this.translate.use(lang);
   }
 

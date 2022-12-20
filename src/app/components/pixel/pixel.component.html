@@ -2,14 +2,14 @@
 <div *ngIf="tecInfo" class="text-box mx-auto">
   <h1 class="display-8 fw-bold title">{{tecInfoName}}</h1>
   <div class="paragraph">
-    <p *ngFor="let desc of tecInfoDescription">{{desc}}</p>
+    <p *ngFor="let desc of tecInfoDescription">{{desc | translate}}</p>
   </div>
-  <button type="button" class="btn btn-success ok fw-bold" (click)="closeTecInfo()">OK</button>
+  <button type="button" class="btn btn-success ok fw-bold" (click)="closeTecInfo(tecInfoTag)">OK</button>
 </div>
 
 <div class="row m-0 decorations" [ngClass]="{'with-arrows' : decorationLength > 16}">
   <div *ngFor="let item of decoration[decorationPag]"  class="col-3 p-0 tec">
-    <img *ngIf="(selectedPage$ | async)?.page == 'main'" class="pointer" title="{{item.name}}" alt="{{item.name}}" src="assets/icon/technologies/{{item.tag}}.svg" height="100%" width="100%" (click)="openTecInfo(item.name, item.description)">
+    <img *ngIf="(selectedPage$ | async)?.page == 'main'" class="pointer" title="{{item.name}}" alt="{{item.name}}" src="assets/icon/technologies/{{item.tag}}.svg" height="100%" width="100%" (click)="openTecInfo(item.name, item.description, item.tag)">
     <img *ngIf="(selectedPage$ | async)?.page != 'main'" title="{{item.name}}" alt="{{item.name}}" src="assets/icon/technologies/{{item.tag}}.svg" height="100%" width="100%">
   </div>
   <div class="col-12 p-0 tec"></div>
@@ -30,19 +30,19 @@
 </div>
 
 <div class="row m-0 worker">
-  <div class="col-12 desk p-0">
+  <div (click)="openTextBox()" class="col-12 desk p-0">
     <img class="img" alt="desk" src="assets/icon/general/desk.svg">
     <img class="img" alt="{{(selectedPage$ | async)?.subPage}}" src="{{screen}}">
     <img class="img" alt="{{(selectedPage$ | async)?.subPageItem}}" src="{{subScreen}}">
     <div *ngIf="!working">
       <img class="img" alt="chair" src="assets/icon/general/chair.svg">
-      <img class="img opacity-animation" alt="text-balloon" src="assets/icon/texts-balloons/text-box.svg">
+      <img *ngIf="textBox" class="img opacity-animation" alt="text-balloon" src="assets/icon/texts-balloons/text-box.svg">
     </div>
     <div *ngIf="working">
       <img class="img" alt="me" src="assets/icon/general/me.svg">
-      <img class="img opacity-animation" alt="text-balloon" src="assets/icon/texts-balloons/text-balloon.svg">
+      <img *ngIf="textBox" class="img opacity-animation" alt="text-balloon" src="assets/icon/texts-balloons/text-balloon.svg">
     </div>
-    <img (click)="openTextBox()" class="img opacity-animation pointer" alt="text-balloon" src="assets/icon/texts-balloons/text-sm-es-click.svg">
+    <img *ngIf="textBox" class="img opacity-animation pointer" alt="text-balloon" src="assets/icon/texts-balloons/{{textBoxMessage}}.svg">
   </div>
 
 </div>

@@ -17,6 +17,7 @@ export class ContentComponent implements OnInit {
   experience = DataExperience
   projects = DataProjects
   studies = DataStudies
+  externalMessage = ""
 
   constructor(private observableService: ObservableService) { }
 
@@ -32,5 +33,9 @@ export class ContentComponent implements OnInit {
       left: 0,
       behavior: 'smooth'
     });
+  }
+
+  message(e: any){
+    this.externalMessage = e
   }
 }

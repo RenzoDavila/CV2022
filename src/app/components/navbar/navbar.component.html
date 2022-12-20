@@ -8,26 +8,21 @@
     <div class="collapse navbar-collapse justify-content-md-end" id="navbars">
       <ul class="navbar-nav">
         <li class="nav-item" (click)="changeSelected('experience', 'nttdata')" title="Experiencia" data-bs-toggle="collapse" data-bs-target="#navbars">
-          <a class="nav-link" [ngClass]="{'active' : selectedPage.page == 'experience'}">Experiencia</a>
+          <a class="nav-link" [ngClass]="{'active' : selectedPage.page == 'experience'}">{{'navbar.experience' | translate }}</a>
         </li>
         <li class="nav-item" (click)="changeSelected('projects', 'billing')" title="Proyectos" data-bs-toggle="collapse" data-bs-target="#navbars">
-          <a class="nav-link" [ngClass]="{'active' : selectedPage.page == 'projects'}">Proyectos</a>
+          <a class="nav-link" [ngClass]="{'active' : selectedPage.page == 'projects'}">{{'navbar.projects' | translate }}</a>
         </li>
         <li class="nav-item" (click)="changeSelected('studies', 'tecsup')" title="Estudios" data-bs-toggle="collapse" data-bs-target="#navbars">
-          <a class="nav-link" [ngClass]="{'active' : selectedPage.page == 'studies'}">Estudios</a>
+          <a class="nav-link" [ngClass]="{'active' : selectedPage.page == 'studies'}">{{'navbar.studies' | translate }}</a>
         </li>
         <li class="nav-item" (click)="downloadCV()" title="Descargar CV" data-bs-toggle="collapse" data-bs-target="#navbars">
-          <a class="nav-link">Descargar CV</a>
+          <a class="nav-link">{{'navbar.download' | translate }}</a>
         </li>
       </ul>
-      <span class="form-inline">
-        <select
-            class="form-control lang"
-            #selectedLang
-            (change)="switchLang(selectedLang.value)">
-          <option *ngFor="let language of translate.getLangs()"
-            [value]="language"
-            [selected]="language === translate.currentLang">
+      <span class="form-inline d-flex align-items-center justify-content-end">
+        <select class="form-control lang" #selectedLang (change)="switchLang(selectedLang.value)">
+          <option *ngFor="let language of translate.getLangs()" [value]="language" [selected]="language === translate.currentLang">
             {{language | uppercase}}
           </option>
         </select>

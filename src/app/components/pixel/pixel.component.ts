@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { DataTechnologies } from 'src/app/consts/DataTechnologies.const';
 import { InitPage } from 'src/app/models/InitPage.model';
 import { ObservableService } from 'src/app/services/observable/observable.service';
@@ -31,9 +32,23 @@ export class PixelComponent implements OnInit {
   working = true
   tecInfo = false
   tecInfoName:string = ""
+  tecInfoTag:string = ""
   tecInfoDescription:string[] = [""]
+  language = this.translate.getBrowserLang()
+  textBoxMessage = `text-sm-${this.language}-click`
+  textBox:boolean = true
+  textBoxClick:boolean = true
+  @Output() message = new EventEmitter<string>();
+  @Input()
+  get externalMessage(): string {return this._externalMessage}
+  set externalMessage(value: any){
+    this.changeTextBoxMessage(value)
+    console.log("value", value)
+    this._externalMessage = ""
+  }
+  private _externalMessage:any
 
-  constructor(private observableService: ObservableService,) { }
+  constructor(private observableService: ObservableService, public translate: TranslateService) { }
 
   ngOnInit(): void {
     let randomVar = Math.floor(Math.random() * 2);
@@ -44,7 +59,9 @@ export class PixelComponent implements OnInit {
     }
 
     this.selectedPage$.subscribe((selectedPage) => {
-      console.log("selectedPage",selectedPage)
+      if(this.selectedPage.page !== selectedPage.page || this.selectedPage.subPage !== selectedPage.subPage || this.selectedPage.subPageItem !== selectedPage.subPageItem){
+        this.textBoxClick = true
+      }
       this.selectedPage = selectedPage
       this.decorationPagination = 0
       this.decorationPag = 0
@@ -53,7 +70,44 @@ export class PixelComponent implements OnInit {
       this.subScreen = this.urlScreen + 'sub-screen-main-main.svg'
       this.getDecorations();
       this.getScreens();
+      this.changeTextBoxMessage();
     });
+
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.language = event.lang;
+      this.changeTextBoxMessage();
+    });
+  }
+
+
+  changeTextBoxMessage(message?: string){
+    if(this.textBoxClick){
+      this.textBox = true
+      this.textBoxMessage = `text-${this.language}-click`;
+    }else{
+      switch (message) {
+        case 'interesting':
+          this.textBox = true
+          this.textBoxMessage = `text-${this.language}-interesting`;
+          setTimeout(() => this.textBox = false, 6000);
+          break;
+        case 'angular':
+          this.textBox = true
+          this.textBoxMessage = `text-${this.language}-angular`;
+          setTimeout(() => this.textBox = false, 6000);
+          break;
+        case 'infoless':
+          this.textBox = true;
+          this.textBoxMessage = `text-${this.language}-infoless`;
+          setTimeout(() => this.textBoxMessage = `text-ellipsis`, 6000);
+          setTimeout(() => this.textBoxMessage = `text-${this.language}-embarrassing`, 12000);
+          setTimeout(() => this.textBox = false, 18000);
+          break;
+        // default:
+
+        //   break;
+      }
+    }
   }
 
   getScreens() {
@@ -137,14 +191,28 @@ export class PixelComponent implements OnInit {
       textBox: true,
     };
     this.observableService.setPage(tempSelectedPage)
+    this.textBox = false
+    this.textBoxClick = false
+    this.message.emit("none");
   }
 
-  closeTecInfo() {
+  closeTecInfo(tec?:string) {
     this.tecInfo = false
+    switch (tec) {
+      case 'angular':
+        console.log("angular")
+        this.changeTextBoxMessage('angular');
+        break;
+      default:
+        console.log("interesting")
+        this.changeTextBoxMessage('interesting');
+        break;
+    }
   }
 
-  openTecInfo(name:string, description:string[]) {
+  openTecInfo(name:string, description:string[], tag:string) {
     this.tecInfoName = name
+    this.tecInfoTag = tag
     this.tecInfoDescription = description
     this.tecInfo = true
   }
