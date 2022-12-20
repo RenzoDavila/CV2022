@@ -9,5 +9,68 @@
     "mongodb1": "MongoDB es una base de datos de documentos que ofrece una gran escalabilidad y flexibilidad, y un modelo de consultas e indexación avanzado.",
     "mongodb2": "MongoDB es de uso gratuito.",
     "express": "Texto de prueba de ."
+  },
+  "info-exp":{
+    "full": "Desarrollador Full Stack",
+    "front": "Desarrollador Front-End",
+    "back": "Desarrollador Back-End"
+  },
+  "nttdata":{
+    "date": "Julio 2021 - Presente",
+    "desc1": "NTT DATA, parte de NTT Group, es uno de los 10 principales proveedores de servicios de TI a nivel mundial.",
+    "desc2": "Ofrecen servicios de consultoría, soluciones industriales, servicios de procesos de negocio, modernización de TI y servicios gestionados.",
+    "task1": "Desarrollo deL backend haciendo uso de Java Spring",
+    "task2": "Creación, mantenimiento y mejora de diversos componentes para el front-end haciendo uso de Angular13",
+    "task3": "Desarrollo de microservicios haciendo uso de Java Spring Boot",
+    "task4": "Gestión de contenedores haciendo uso de Docker",
+    "task5": "Creación y mantenimiento de diversos componentes para el front-end haciendo uso de Angular13",
+    "task6": "Creación de microservicios haciendo uso de node js con funciones lambda - AWS",
+    "task7": "Gestión de bases de datos MySQL con el servicio RDS - AWS",
+    "task8": "Agregando módulos para el front-end haciendo uso de Lit-Html (JS)",
+    "task9": "Recreación del front-end del sistema silverlight haciendo uso de Angular11",
+    "task10": "Test de módulos haciendo uso de jest.js",
+    "task11": "Consumo de API REST"
+  },
+  "renfe":{
+    "date": "Noviembre 2022 - presente",
+    "desc1": "Plataforma de administración de las vías ferroviarias y trenes de España, incluyendo rutas, cargas, estaciones, etc.",
+    "desc2": "Tecnologías usadas: Java Spring - Angular13.",
+    "task1": "Desarrollo deL backend haciendo uso de Java Spring",
+    "task2": "Creación, mantenimiento y mejora de diversos componentes para el front-end haciendo uso de Angular13"
+  },
+  "datadis":{
+    "date": "Febrero 2022 - Octubre 2022",
+    "desc1": "Es una plataforma de datos de consumo eléctrico que permite al administrador ver, agregar, editar y eliminar diversas empresas y sus consumos eléctricos a una base de datos mediante una API y a los usuarios en general verificar el consumo eléctrico en diversos periodos de tiempo.",
+    "desc2": "Tecnologías usadas: Java Spring Boot - Docker - Angular13.",
+    "task1": "Desarrollo de microservicios haciendo uso de Java Spring Boot",
+    "task2": "Gestión de contenedores haciendo uso de Docker",
+    "task3": "Creación, mantenimiento y mejora de diversos componentes para el front-end haciendo uso de Angular13"
+  },
+  "ree":{
+    "date": "Diciembre 2021 - Enero 2022",
+    "desc1": "Sistema administrativo y dashboard para la red eléctrica de España.",
+    "desc2": "El sistema permite a la población en general verificar su consumo eléctrico mediante diversos gráficos.",
+    "desc3": "Tecnologías usadas: Node js - lambda(AWS) -  RDS(AWS) - MySQL - LitHtml(JS).",
+    "task1": "Creación microservicios haciendo uso de node js con funciones lambda - AWS",
+    "task2": "Gestión de bases de datos MySQL con el servicio RDS - AWS",
+    "task3": "Agregando módulos para el front-end haciendo uso de Lit-Html (JS)"
+  },
+  "ibost":{
+    "date": "Julio 2021 - Noviembre 2021",
+    "desc1": "El proyecto consistía en la migración de un sistema basado en Silverlight a un nuevo proyecto usando la tecnología Angular11.",
+    "desc2": "iBost es una empresa que se dedica a la distribución de diversas resistencias eléctricas y su sistema requería una administración de pedidos y clientes.",
+    "desc3": "Tecnologías usadas: jest.js - API REST - Angular11.",
+    "task1": "Recreación del front-end del sistema silverlight haciendo uso de Angular11",
+    "task2": "Test de módulos haciendo uso de jest.js",
+    "task3": "Consumo de API REST"
+  },
+  "adiasoft":{
+    "date": "Enero 2022 - Abril 2022",
+    "desc1": "Es un Software de ventas entorno ERP, para una gestión automatizada y administrativa para pequeñas y medianas empresas.",
+    "desc2": "El proyecto consistía en crear una plataforma orientada a la facturación electrónica que se pueda integrar tanto en los sistemas antiguos como en los actuales.",
+    "desc3": "Tecnologías usadas: Java Spring Boot - React - SQL server.",
+    "task1": "Adaptación de un sistemas de Facturación Electrónica haciendo uso de React",
+    "task2": "Desarrollo API REST con Java Spring Boot",
+    "task3": "Creación de tablas, triggers e índices SQL server"
   }
 }

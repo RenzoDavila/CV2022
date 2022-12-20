@@ -30,19 +30,19 @@
 </div>
 
 <div class="row m-0 worker">
-  <div (click)="openTextBox()" class="col-12 desk p-0">
+  <div class="col-12 desk p-0">
     <img class="img" alt="desk" src="assets/icon/general/desk.svg">
     <img class="img" alt="{{(selectedPage$ | async)?.subPage}}" src="{{screen}}">
     <img class="img" alt="{{(selectedPage$ | async)?.subPageItem}}" src="{{subScreen}}">
-    <div *ngIf="!working">
+    <div class="pointer" (click)="openTextBox()" *ngIf="!working">
       <img class="img" alt="chair" src="assets/icon/general/chair.svg">
       <img *ngIf="textBox" class="img opacity-animation" alt="text-balloon" src="assets/icon/texts-balloons/text-box.svg">
     </div>
-    <div *ngIf="working">
+    <div class="pointer" (click)="openTextBox()" *ngIf="working">
       <img class="img" alt="me" src="assets/icon/general/me.svg">
       <img *ngIf="textBox" class="img opacity-animation" alt="text-balloon" src="assets/icon/texts-balloons/text-balloon.svg">
     </div>
-    <img *ngIf="textBox" class="img opacity-animation pointer" alt="text-balloon" src="assets/icon/texts-balloons/{{textBoxMessage}}.svg">
+    <img (click)="openTextBox()" *ngIf="textBox" class="img opacity-animation pointer" alt="text-balloon" src="assets/icon/texts-balloons/{{textBoxMessage}}.svg">
   </div>
 
 </div>

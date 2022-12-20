@@ -22,9 +22,9 @@
     <div *ngIf="!this.whitOutInfo" class="position-relative overflow-hidden p-4 m-3 mt-0 pt-0 mb-0 pb-0 text-center bg-transparent">
       <div class="mx-auto">
         <h1 class="display-4 fw-bold">{{info.title}}</h1>
-        <h2 class="display-8 fw-normal">{{info.position}} ({{info.date}})</h2>
+        <h2 class="display-8 fw-normal">{{info.position | translate}} ({{info.date | translate}})</h2>
         <hr>
-        <p class="lead fw-normal text-start" *ngFor="let item of info.description">{{item}}</p>
+        <p class="lead fw-normal text-start" *ngFor="let description of info.description">{{description | translate}}</p>
       </div>
       <div class="product-device shadow-sm d-none d-md-block"></div>
       <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
@@ -35,7 +35,7 @@
         <div class="col-12 bg-transparent p-2 pt-0 pb-0 text-center overflow-hidden">
           <div class="p-1">
             <p class="lead fw-normal text-start">Tareas:</p>
-              <p class="text-start ps-5" *ngFor="let item of info.tasks">•  {{item}}</p>
+              <p class="text-start ps-5" *ngFor="let task of info.tasks">•  {{task | translate}}</p>
           </div>
         </div>
         <div class="col-12 bg-transparent p-1 pb-0 text-center overflow-hidden d-flex align-items-center justify-content-center">
@@ -56,10 +56,10 @@
       <div *ngFor="let section of subSections; index as i" class="d-md-flex p-4 m-3 mt-0 pt-0 mb-0 pb-0">
         <div [ngClass]="{'bg-light' : isPair(i+1), 'bg-dark text-white' : !isPair(i+1), 'border-up-left border-up' : (i+1 == 1), 'border-down-left' : (i+1 == subSections.length), 'borderless-all ' : (i+1 != 1)}" class="p-1 pb-0 text-center overflow-hidden w-100">
           <div class="p-1">
-            <h2 class="display-5">{{i+1}} - {{section.title}}</h2>
-            <p class="lead" *ngFor="let description of section.description">{{description}}</p>
+            <h2 class="display-5">{{i+1}}/{{subSections.length}} - {{section.title}}</h2>
+            <p class="lead" *ngFor="let description of section.description">{{description | translate}}</p>
             <p class="lead text-start">Tareas:</p>
-              <p class="text-start" *ngFor="let task of section.tasks">•  {{task}}</p>
+              <p class="text-start" *ngFor="let task of section.tasks">•  {{task | translate}}</p>
           </div>
         </div>
         <div [ngClass]="{'bg-dark bg-light-m' : isPair(i+1), 'bg-light bg-dark-m' : !isPair(i+1), 'border-up-right' : (i+1 == 1), 'bg-m border-down border-down-right' : (i+1 == subSections.length)}" class="p-1 pb-0 text-center overflow-hidden d-flex align-items-center justify-content-center w-100">
@@ -74,7 +74,7 @@
           </div>
         </div>
       </div>
-      <button type="button" class="btn btn-success ok fw-bold" (click)="close()">OK</button>
     </div>
+    <button type="button" class="btn btn-success ok fw-bold" (click)="close()">OK</button>
   </div>
 </div>

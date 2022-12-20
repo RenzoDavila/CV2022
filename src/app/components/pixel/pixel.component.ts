@@ -111,9 +111,6 @@ export class PixelComponent implements OnInit {
           this.timeout2 = setTimeout(() => this.textBoxMessage = `text-${this.language}-embarrassing`, 12000);
           this.timeout3 = setTimeout(() => this.textBox = false, 18000);
           break;
-        // default:
-
-        //   break;
       }
     }
   }
