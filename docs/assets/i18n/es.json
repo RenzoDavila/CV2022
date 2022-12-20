@@ -7,6 +7,7 @@
   },
   "tec":{
     "mongodb1": "MongoDB es una base de datos de documentos que ofrece una gran escalabilidad y flexibilidad, y un modelo de consultas e indexación avanzado.",
-    "mongodb2": "MongoDB es de uso gratuito."
+    "mongodb2": "MongoDB es de uso gratuito.",
+    "express": "Texto de prueba de express."
   }
 }

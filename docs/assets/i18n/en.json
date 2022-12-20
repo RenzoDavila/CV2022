@@ -7,6 +7,7 @@
   },
   "tec":{
     "mongodb1": "MongoDB is a distributed database at its core, so high availability, horizontal scaling, and geographic distribution are built in and easy to use.",
-    "mongodb2": "MongoDB is free to use."
+    "mongodb2": "MongoDB is free to use.",
+    "express": "Express text test."
   }
 }
