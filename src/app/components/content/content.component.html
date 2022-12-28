@@ -7,7 +7,7 @@
   <div id="divElem" *ngIf="(selectedPage$ | async)?.page != 'main'" class="col-12 col-md-9 pt-3 px-0 text-center themed-grid-col h-100 d-md-none section" style="scroll-snap-type: initial;">
     <app-sub-menu [studies]="studies" [projects]="projects" [experience]="experience" [main]="main"></app-sub-menu>
   </div>
-  <div class="col-12 col-md-9 pt-3 px-0 text-center themed-grid-col h-100 section" style="background-color: #20375B">
+  <div class="col-12 col-md-9 pt-3 px-0 text-center themed-grid-col h-100 section bgmain">
     <app-pixel (message)="message($event)" [externalMessage]="externalMessage" [studies]="studies" [projects]="projects" [experience]="experience" [main]="main"></app-pixel>
   </div>
 
