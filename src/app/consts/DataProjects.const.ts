@@ -2,7 +2,7 @@ export const DataProjects = [
   {
     name: "facturación electrónica",
     tag: "billing",
-    description: "facturación electrónica - stack MEAN",
+    description: "FACTURACION ELECTRONICA - STACK MEAN",
     ownLogo: true, //si se pone false el por defecto es icon/projects/projects.svg
     multiple: false,
     technologies: {all: false, used: []},

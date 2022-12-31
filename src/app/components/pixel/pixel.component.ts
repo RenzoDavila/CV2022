@@ -47,7 +47,6 @@ export class PixelComponent implements OnInit {
   get externalMessage(): string {return this._externalMessage}
   set externalMessage(value: any){
     this.changeTextBoxMessage(value)
-    console.log("value", value)
     this._externalMessage = ""
   }
   private _externalMessage:any
@@ -205,11 +204,9 @@ export class PixelComponent implements OnInit {
     this.tecInfo = false
     switch (tec) {
       case 'angular':
-        console.log("angular")
         this.changeTextBoxMessage('angular');
         break;
       default:
-        console.log("interesting")
         this.changeTextBoxMessage('interesting');
         break;
     }

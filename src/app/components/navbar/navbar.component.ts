@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { InitPage } from 'src/app/models/InitPage.model';
+import { AppService } from 'src/app/services/app/app.service';
 import { ObservableService } from 'src/app/services/observable/observable.service';
 
 @Component({
@@ -32,8 +33,8 @@ export class NavbarComponent implements OnInit {
     this.observableService.setPage(tempSelectedPage)
   }
 
-  downloadCV(){
-    console.log("Estamos Descargando el CV")
+  download(){
+    AppService.downloadFile(this.translate.currentLang)
   }
 
   switchLang(lang: string) {

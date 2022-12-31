@@ -23,21 +23,12 @@ export const DataExperience = [
     subData: [{ name: "", tag: "", description: "", ownLogo: false }]
   },
   {
-    name: "WEB CONTROL",
+    name: "WEBCONTROL",
     tag: "webControl",
-    description: "WEB CONTROL SYSTEMS PERU S.A.C.",
+    description: "WEBCONTROL SYSTEMS PERU S.A.C.",
     ownLogo: true,
     multiple: false,
     technologies: {all: false, used: [8,28,27,40]},
-    subData: [{ name: "", tag: "", description: "", ownLogo: false }]
-  },
-  {
-    name: "FRANCISCO ROJAS",
-    tag: "frs",
-    description: "I.E.P. FRANCISCO ROJAS SCHOOL",
-    ownLogo: true,
-    multiple: false,
-    technologies: {all: false, used: [23,31,32]},
     subData: [{ name: "", tag: "", description: "", ownLogo: false }]
   },
   {
@@ -47,6 +38,15 @@ export const DataExperience = [
     ownLogo: true,
     multiple: false,
     technologies: {all: false, used: [7,3,13,21,2,4]},
+    subData: [{ name: "", tag: "", description: "", ownLogo: false }]
+  },
+  {
+    name: "FRANCISCO ROJAS",
+    tag: "frs",
+    description: "I.E.P. FRANCISCO ROJAS SCHOOL",
+    ownLogo: true,
+    multiple: false,
+    technologies: {all: false, used: [23,31,32]},
     subData: [{ name: "", tag: "", description: "", ownLogo: false }]
   },
   {

@@ -3,7 +3,7 @@
     "experience": "Experiencia",
     "projects": "Proyectos",
     "studies": "Estudios",
-    "download": "Descargar CV "
+    "download": "Descargar CV"
   },
   "tec":{
     "mongodb1": "MongoDB es una base de datos de documentos que ofrece una gran escalabilidad y flexibilidad, y un modelo de consultas e indexación avanzado.",
@@ -13,7 +13,8 @@
   "info-exp":{
     "full": "Desarrollador Full Stack",
     "front": "Desarrollador Front-End",
-    "back": "Desarrollador Back-End"
+    "back": "Desarrollador Back-End",
+    "support": "Especialista de Soporte"
   },
   "nttdata":{
     "date": "Julio 2021 - Presente",
@@ -72,5 +73,49 @@
     "task1": "Adaptación de un sistemas de Facturación Electrónica haciendo uso de React",
     "task2": "Desarrollo API REST con Java Spring Boot",
     "task3": "Creación de tablas, triggers e índices SQL server"
+  },
+  "webControl":{
+    "date": "Septiembre 2020 - Julio 2021",
+    "desc1": "WebControl System es una empresa del área de tecnologías de la información, principalmente orientada a empresas de minería.",
+    "desc2": "El sistema está orientado a la gestión del negocio, proporcionando herramientas como reportes, control de envíos, Kardex, CRUDs, etc.",
+    "desc3": "Tecnologías usadas: Visual Basic Script - ASP.NET - SQL server - .NET CORE.",
+    "task1": "Administración de bases de datos usando SQL Server",
+    "task2": "Desarrollo Front-End haciendo uso de VBScript / ASP.NET",
+    "task3": "Desarrollo Back-End API REST con .NET CORE"
+  },
+  "orooplex":{
+    "date": "Septiembre 2019 - Agosto 2020",
+    "desc1": "Orooplex es un servicio web orientado a anuncios empresariales, publicidad y marketing digital.",
+    "desc2": "Tecnologías usadas: React - Angular - Node.Js - Express - MySQL.",
+    "task1": "Creación de paginas web enfocadas a la publicidad y el marketing",
+    "task2": "Desarrollo Front-End haciendo uso de React / Angular",
+    "task3": "Desarrollo Back-End API REST con MySQL / Express / Node.Js"
+  },
+  "frs":{
+    "date": "Enero 2020 - Abril 2020",
+    "desc1": "Francisco Rojas School es una institución educativa particular.",
+    "desc2": "El especialista de soporte se encarga de publicidad, mantenimiento y desarrollo de la pagina web de la institución y mantenimiento de los equipos digitales en la instalación.",
+    "desc3": "Tecnologías usadas: wordpress - Adobe Illustrator - Adobe Photoshop",
+    "task1": "Creación de las diversas publicidades y anuncios de la institución haciendo uso de Adobe Illustrator y Photoshop",
+    "task2": "Administración y creación de componentes de la pagina web haciendo uso de Wordpress",
+    "task3": "Mantenimiento de dispositivos digitales de las instalaciones"
+  },
+  "andromeda":{
+    "date": "Febrero 2019 - Agosto 2019",
+    "desc1": "Andromeda.Pe es una empresa que se dedica al desarrollo de aplicaciones web mayormente orientadas a la facturación electrónica.",
+    "desc2": "Tecnologías usadas: Laravel - MySQL",
+    "task1": "conexión con API de SUNAT para el CRUD de boletas y facturas en su sistema",
+    "task2": "Administración de bases de datos haciendo uso de MySQL",
+    "task3": "Creación y mantenimiento de lógica de negocio haciendo uso de Laravel - php"
+  },
+  "auditel":{
+    "date": "Diciembre 2018 - Febrero 2019",
+    "desc1": "Auditel es un mayorista en telecomunicaciones y seguridad.",
+    "desc2": "Implementa hardware y software de seguridad a diversas instituciones.",
+    "desc3": "Tecnologías usadas: React - Express - Node.Js - MongoDB",
+    "task1": "Creación de una pagina web en la que alumnos podrán realizar diversas acciones como ver notas, registrar entradas, ver mensajes, etc ",
+    "task2": "Creación de diversos componentes usando React",
+    "task3": "Creación de lógica de negocio haciendo uso de Express",
+    "task4": "Administración de bases de datos haciendo uso de MySQL"
   }
 }

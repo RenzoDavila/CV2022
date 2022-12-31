@@ -13,7 +13,8 @@
   "info-exp":{
     "full": "Full Stack Developer",
     "front": "Front-End Developer",
-    "back": "Back-End Developer"
+    "back": "Back-End Developer",
+    "support": "Support Specialist"
   },
   "nttdata":{
     "date": "July 2021 - Present",
@@ -69,8 +70,52 @@
     "desc1": "It is an ERP environment sales software, for automated and administrative management for small and medium-sized companies.",
     "desc2": "The project consisted of creating a platform oriented towards electronic invoicing that can be integrated into both old and current systems.",
     "desc3": "Technologies used: Java Spring Boot - React - SQL server.",
-    "task1": "Adaptation of an Electronic Billing system using React",
+    "task1": "Adaptation of an electronic billing system using React",
     "task2": "REST API development with Java Spring Boot",
     "task3": "Creation of tables, triggers and indexes SQL server"
+  },
+  "webControl":{
+    "date": "September 2020 - July 2021",
+    "desc1": "WebControl System is a company in the area of information technology, mainly oriented to mining companies.",
+    "desc2": "The system is oriented towards business management, providing tools such as reports, shipment control, Kardex, CRUDs, etc.",
+    "desc3": "Technologies used: Visual Basic Script - ASP.NET - SQL server - .NET CORE.",
+    "task1": "Database administration using SQL Server",
+    "task2": "Front-End development using VBScript / ASP.NET",
+    "task3": "Back-End REST API development with .NET CORE"
+  },
+  "orooplex":{
+    "date": "September 2019 - August 2020",
+    "desc1": "Orooplex is a web service oriented to business announcements, publicity and digital marketing.",
+    "desc2": "Technologies used: React - Angular - Node.Js - Express - MySQL.",
+    "task1": "Creation of web pages focused on advertising and marketing",
+    "task2": "Front-End development using React / Angular",
+    "task3": "Back-End REST API development with  MySQL / Express / Node.Js"
+  },
+  "frs":{
+    "date": "January 2020 - April 2020",
+    "desc1": "Francisco Rojas School is a private educational institution.",
+    "desc2": "The support specialist is in charge of advertising, maintenance and development of the institution's website and maintenance of digital equipment in the facility.",
+    "desc3": "Technologies used: wordpress - Adobe Illustrator - Adobe Photoshop",
+    "task1": "Creation of advertisements and announcements of the institution using Adobe Illustrator and Photoshop",
+    "task2": "Administration and creation of components of the web page using Wordpress",
+    "task3": "Maintenance of digital devices of the facilities"
+  },
+  "andromeda":{
+    "date": "February 2019 - August 2019",
+    "desc1": "Andromeda.Pe is a company whose business is the development of web applications mainly oriented to electronic billing.",
+    "desc2": "Technologies used: Laravel - MySQL",
+    "task1": "Connection with SUNAT API to CRUD of tickets and billings in the system",
+    "task2": "Database administration using MySQL",
+    "task3": "Creation and maintenance of business logic using Laravel - php"
+  },
+  "auditel":{
+    "date": "December 2018 - February 2019",
+    "desc1": "Auditel is a wholesaler in telecommunications and security.",
+    "desc2": "Implement security hardware and software to various institutions.",
+    "desc3": "Technologies used: React - Express - Node.Js - MongoDB",
+    "task1": "Creation of a web page in which students can perform various actions such as view notes, register entries, view messages, etc",
+    "task2": "Creation of components using React",
+    "task3": "Creation of business logic using Express",
+    "task4": "Database administration using MySQL"
   }
 }
